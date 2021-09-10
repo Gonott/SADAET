@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +64,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABM Autorizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Autorizaciones.Designer.cs">
+      <DependentUpon>ABM Autorizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asignación de Equipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asignación de Equipos.Designer.cs">
+      <DependentUpon>Asignación de Equipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Elegir Idioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Elegir Idioma.Designer.cs">
+      <DependentUpon>Elegir Idioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form Login.Designer.cs">
       <DependentUpon>Form Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdicionDeRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdicionDeRoles.Designer.cs">
+      <DependentUpon>FormEdicionDeRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPerfilesDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerfilesDeUsuario.Designer.cs">
+      <DependentUpon>FormPerfilesDeUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -58,13 +106,84 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AgregarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AgregarIdioma.Designer.cs">
+      <DependentUpon>Form_AgregarIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BuscarComponentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BuscarComponentes.Designer.cs">
+      <DependentUpon>Form_BuscarComponentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ComodatoLegal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ComodatoLegal.Designer.cs">
+      <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Entregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Entregas.Designer.cs">
+      <DependentUpon>Form_Entregas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MarcarConfigurado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MarcarConfigurado.Designer.cs">
+      <DependentUpon>Form_MarcarConfigurado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SolicitudDeEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SolicitudDeEquipo.Designer.cs">
+      <DependentUpon>Form_SolicitudDeEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="ABM Autorizaciones.resx">
+      <DependentUpon>ABM Autorizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asignación de Equipos.resx">
+      <DependentUpon>Asignación de Equipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentesAdecuados.rdlc" />
+    <EmbeddedResource Include="Elegir Idioma.resx">
+      <DependentUpon>Elegir Idioma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEdicionDeRoles.resx">
+      <DependentUpon>FormEdicionDeRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerfilesDeUsuario.resx">
+      <DependentUpon>FormPerfilesDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AgregarIdioma.resx">
+      <DependentUpon>Form_AgregarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BuscarComponentes.resx">
+      <DependentUpon>Form_BuscarComponentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ComodatoLegal.resx">
+      <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Entregas.resx">
+      <DependentUpon>Form_Entregas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MarcarConfigurado.resx">
+      <DependentUpon>Form_MarcarConfigurado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SolicitudDeEquipo.resx">
+      <DependentUpon>Form_SolicitudDeEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +194,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReporteComodato.rdlc" />
+    <EmbeddedResource Include="ReporteRemito.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BE.Componente.datasource" />
+    <None Include="Properties\DataSources\BE.Equipo.datasource" />
+    <None Include="Properties\DataSources\BE.Periferico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,6 +226,21 @@
       <Project>{fe8ba6fb-c5fa-404a-9f74-90aaf8d3acbc}</Project>
       <Name>SERVICIOS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

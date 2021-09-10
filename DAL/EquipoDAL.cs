@@ -18,120 +18,123 @@ namespace DAL
 
 
 
-        #region ABM
-        public void AltaEquipo(Equipo equi)
-        {
-            try
-            {
-                
-            cmd.Parameters.Clear();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "AgregarEquipo";
-            cmd.Parameters.AddWithValue("@inv", equi.CodInventario);
-            cmd.Parameters.AddWithValue("@ram", equi.RAM);
-            cmd.Parameters.AddWithValue("@disco", equi.Disco);
-            cmd.Parameters.AddWithValue("@desc", equi.Descripcion);
-            cmd.Parameters.AddWithValue("@proc", equi.Procesador);
-        
-            cmd.Connection = cn;
-            cmd.Connection.Open();
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-               
-            }
-
-
-        }
-
-
-        public void BajaEquipo(Equipo equi)
-        {
-            try
-            {
-
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "BajaEquipo";
-                cmd.Parameters.AddWithValue("@inv", equi.CodInventario);
-               
-
-                cmd.Connection = cn;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-
-            }
-
-
-
-        }
-
-        public void ModificarEquipo(Equipo equi)
-        {
-
-            try
-            {
-
-                cmd.Parameters.Clear();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "ModificarEquipo";
-                cmd.Parameters.AddWithValue("@inv", equi.CodInventario);
-                cmd.Parameters.AddWithValue("@ram", equi.RAM);
-                cmd.Parameters.AddWithValue("@disco", equi.Disco);
-                cmd.Parameters.AddWithValue("@desc", equi.Descripcion);
-                cmd.Parameters.AddWithValue("@proc", equi.Procesador);
-
-                cmd.Connection = cn;
-                cmd.Connection.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Connection.Close();
-
-            }
-            catch (Exception e)
-            {
-                throw e;
-
-            }
-
-
-        }
-
-        #endregion
-
-
 
         #region SELECTS
 
         public List<Equipo> ListarEquipos()
         {
-            cmd.Parameters.Clear();
-            List<Equipo> equipos = new List<Equipo>();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "ListarEquiposStock";
-            cmd.Connection = cn;
-            cmd.Connection.Open();
-            SqlDataReader Lector = cmd.ExecuteReader();
-            while (Lector.Read())
+            try
+            {
+                cmd.Parameters.Clear();
+                List<Equipo> equipos = new List<Equipo>();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ListarEquiposConfigurados";
+                cmd.Connection = cn;
+                cmd.Connection.Open();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Equipo equi = new Equipo();
+                    equi.CodInventario = int.Parse(Lector["Codigo"].ToString());
+                    equi.Descripcion = Lector["Descripcion"].ToString();
+                    equipos.Add(equi);
+                }
+                cmd.Connection.Close();
+                return equipos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
+            
+        }
+
+
+        public List<Componente> ListarComponentesPorEquipo(Equipo equi) //Lista los componentes para un equipo dado.
+        {
+            try
+            {
+                List<Componente> componentes = new List<Componente>();
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("idequipo", equi.CodInventario);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ListarComponentesDeEquipo";
+                cmd.Connection = cn;
+                cmd.Connection.Open();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Componente cmp = new Componente();
+                    cmp.Id = int.Parse(Lector["Id"].ToString());
+                    cmp.Descripcion = Lector["Descripcion"].ToString();
+                    cmp.Capacidad = int.Parse(Lector["Capacidad"].ToString());
+                    cmp.Velocidad = int.Parse(Lector["Velocidad"].ToString());
+                    switch (Lector["Tipo"].ToString())
+                    {
+                        case "DiscoDuro": cmp.Tipo = TipoComponente.DiscoDuro; break;
+                        case "MemoriaRAM": cmp.Tipo = TipoComponente.MemoriaRAM; break;
+                        case "Procesador": cmp.Tipo = TipoComponente.Procesador; break;
+                    }
+                    componentes.Add(cmp);
+                }
+                cmd.Connection.Close();
+                return componentes;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
+            
+
+        }
+
+         
+        public Equipo SeleccionarEquipo (int codinventario)
+        {
+            try
             {
                 Equipo equi = new Equipo();
-                //equi.CodInventario = int.Parse(Lector[0].ToString());
-                //equi.ram = Lector[1].ToString();
-                //equi.Disco = Lector[2].ToString();
-                // se completará esta parte una vez bien definido el modelo de datos.
-                equipos.Add(equi);
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SeleccionarEquipo";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@codinv", codinventario);
+                cmd.Connection.Open();
+                equi.Descripcion = cmd.ExecuteScalar().ToString();
+                cmd.Connection.Close();
+                equi.CodInventario = codinventario;
+                equi.Componentes = ListarComponentesPorEquipo(equi);
+                cmd.Dispose();
+                return equi;
             }
-            cmd.Connection.Close();
-            return equipos;
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cn != null && cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+            }
         }
 
         #endregion

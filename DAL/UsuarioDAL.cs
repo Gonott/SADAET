@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BE;
 using System.Data;
 using System.Data.SqlClient;
+using SERVICIOS;
 
 
 
@@ -19,68 +20,82 @@ namespace DAL
 
         public int ValidarUsuario()
         {
-           
-            Usuario usu = Sesion.ObtenerInstancia.EsteUsuario;
-            SqlCommand cmd = new SqlCommand("ValidarUsuario", cnx);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@usu", usu.NombreUsuario);
-            cmd.Parameters.AddWithValue("@pwd", usu.Contraseña);
-            cnx.Open();
-            int count = Sesion.ObtenerInstancia.EsteUsuario.IdUsuario = (int)cmd.ExecuteScalar();
-            cnx.Close();
-            return count;
+            try
+            {
+                int count;
+                SqlCommand cmd = new SqlCommand("ValidarUsuario", cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@usu", Sesion.ObtenerInstancia.EsteUsuario.NombreUsuario);
+                cmd.Parameters.AddWithValue("@pwd", Sesion.ObtenerInstancia.EsteUsuario.Contraseña);
+                cnx.Open();
+                object objetoDB = cmd.ExecuteScalar();
+                if (objetoDB != null)
+                {
+                    count = int.Parse(objetoDB.ToString());
+                    
+                }
+                else
+                {
+                    count = 0;
+                }
+                
+                Sesion.ObtenerInstancia.EsteUsuario.IdUsuario = count;
+                cnx.Close();
+                return count;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cnx != null && cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
 
         }
 
-        public void IniciarSesion()
-        {
-            Usuario usu = Sesion.ObtenerInstancia.EsteUsuario;
-            SqlCommand cmd = new SqlCommand("IniciarSesion", cnx);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@usu", usu.NombreUsuario);
-            cmd.Parameters.AddWithValue("@pwd", usu.Contraseña);
-            cnx.Open();
-            cmd.ExecuteNonQuery();
-            cnx.Close();
-
-        }
-
-
-        public void CerrarSesion()
-        {
-            Usuario usu = Sesion.ObtenerInstancia.EsteUsuario;
-            SqlCommand cmd = new SqlCommand("CerrarSesion", cnx);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@usu", usu.NombreUsuario);
-            cmd.Parameters.AddWithValue("@pwd", usu.Contraseña);
-            cnx.Open();
-            cmd.ExecuteNonQuery();
-            cnx.Close();
-
-        }
+        
 
 
         public List<Usuario> VerUsuarios()
         {
-            List<Usuario> Usuarios = new List<Usuario>();
-            SqlCommand cmd = new SqlCommand("ListarUsuarios", cnx);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Clear();
-            cmd.Connection.Open();
-            SqlDataReader Lector = cmd.ExecuteReader();
-            while (Lector.Read())
+            try
             {
-                Usuario usu = new Usuario();
-                usu.IdUsuario = int.Parse(Lector["Id"].ToString());
-                usu.NombreUsuario = Lector["Usuario"].ToString();
-                usu.Contraseña = Lector["Contraseña"].ToString();
-                Usuarios.Add(usu);
+                List<Usuario> Usuarios = new List<Usuario>();
+                SqlCommand cmd = new SqlCommand("ListarUsuarios", cnx);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Connection.Open();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Usuario usu = new Usuario();
+                    usu.IdUsuario = int.Parse(Lector["IdUsuario"].ToString());
+                    usu.NombreUsuario = Lector["NombreUsuario"].ToString();
+                    Usuarios.Add(usu);
+                }
+
+                cmd.Connection.Close();
+                return Usuarios;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cnx != null && cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
             }
 
-            cmd.Connection.Close();
-            return Usuarios;
         }
 
 

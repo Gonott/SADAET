@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SERVICIOS.PerfilesComposite;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,12 +10,12 @@ namespace BE
 {
     public  class Usuario
     {
+        
+        
+        
+        public List<Autorizacion> Autorizaciones = new List<Autorizacion>();
 
         
-
-        //public List<Autorizacion> Autorizaciones = new List<Autorizacion>();
-
-
         public string NombreUsuario { get; set; }
         public string  Contraseña { get; set; }
 

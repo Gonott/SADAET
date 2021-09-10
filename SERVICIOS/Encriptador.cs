@@ -31,19 +31,20 @@ namespace SERVICIOS
 
 
         #region Encriptado y Desencriptado de Datos sensibles
-        
+
 
         //Funcion creadora del Algoritmo Rijndael con seteo de clave
 
         private RijndaelManaged ObtenerAlgoritmoRijndael()
         {
             RijndaelManaged rijndael = new RijndaelManaged();
-            rijndael.KeySize = 256;
-            rijndael.BlockSize = 256; //usar 128 para compatibilidad con AES
-            rijndael.Padding = PaddingMode.ISO10126;
+            rijndael.KeySize = 256; // bloques de 256 bits los hace compatible con AES.
+            rijndael.BlockSize = 256; //size por defecto
+
+            rijndael.Padding = PaddingMode.PKCS7;
             rijndael.Mode = CipherMode.CBC;
-            rijndael.Key = UTF8Encoding.UTF8.GetBytes("qwertyuiopasdfgh");
-            //La clave tiene que ser de 16 caracteres, ya que estamos tratando con 256 bits.
+            rijndael.Key = UTF8Encoding.UTF8.GetBytes("sadaet2021sadaet2021sadaet2021AA"); /* Longitud de la clave es de 16 bytes. 32*8=256 que es el keysize*/
+            rijndael.IV = UTF8Encoding.UTF8.GetBytes("sadaet2021sadaet2021sadaet2021AA"); // La longitud del vector es del mismo tamano
             return rijndael;
         }
 
@@ -60,7 +61,7 @@ namespace SERVICIOS
         }
 
 
-         // Funcion Desencriptadora
+        // Funcion Desencriptadora
         public string DesEncriptarDatoSensible(string txtCifrado)
         {
             RijndaelManaged criptografo = ObtenerAlgoritmoRijndael();
@@ -70,8 +71,8 @@ namespace SERVICIOS
             MemoryStream memoryStream = new MemoryStream(cipherTextBytes);
             CryptoStream cryptoStream = new CryptoStream(memoryStream, t, CryptoStreamMode.Read);
             int decryptedByteCount = cryptoStream.Read(bytestextoplano, 0, bytestextoplano.Length);
-            memoryStream.Close();
             cryptoStream.Close();
+            memoryStream.Close();
             return Encoding.UTF8.GetString(bytestextoplano, 0, decryptedByteCount);
 
         }

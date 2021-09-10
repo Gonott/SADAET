@@ -41,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Componente.cs" />
+    <Compile Include="Departamento.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Equipo.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Periferico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sesion.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="Remito.cs" />
+    <Compile Include="Software.cs" />
+    <Compile Include="Solicitud.cs" />
+    <Compile Include="TipoComponente.cs" />
+    <Compile Include="TipoPeriferico.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

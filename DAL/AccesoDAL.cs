@@ -32,7 +32,7 @@ namespace DAL
         public SqlConnection ObtenerConexionSql()
         {
             SqlConnection cnx = new SqlConnection();
-            cnx.ConnectionString = "Data Source=Asus-X55A;Initial Catalog=SADAET;Integrated Security=True";
+            cnx.ConnectionString = "Data Source=ASUS-X55A\\SQLEXPRESS;Initial Catalog=SADAET;Integrated Security=True";
             return cnx;
         }
 

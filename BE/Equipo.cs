@@ -13,13 +13,9 @@ namespace BE
 
         public string Descripcion { get; set; }
 
-        public string Disco { get; set; }
+        public List<Componente> Componentes = new List<Componente>();
 
-        public string RAM { get; set; }
 
-        public string Procesador { get; set; }
-
-        
 
     }
 }

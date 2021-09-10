@@ -18,7 +18,7 @@ namespace GUI
     {
 
         public FormPrincipal FormParent;
-        
+
         UsuarioBLL usubll = new UsuarioBLL();
 
         public Form_Login()
@@ -28,7 +28,7 @@ namespace GUI
 
         private void Form_Login_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -43,28 +43,24 @@ namespace GUI
             Encriptador _criptografo = new Encriptador();
             usr.NombreUsuario = TxtUsuario.Text;
             usr.Contraseña = _criptografo.GetSHA256(TxtPassword.Text);
-            
-
+            Sesion.ObtenerInstancia.EsteUsuario = usr;
 
             try
             {
-                if (usubll.ComprobarUsuario(usr) == true)
+                if (usubll.ComprobarUsuario(Sesion.ObtenerInstancia.EsteUsuario) == true)
                 {
                     MessageBox.Show("¡Bienvenido!");
-                    FormParent.logInToolStripMenuItem.Enabled = false;
-                    FormParent.logOutToolStripMenuItem.Enabled = true;
-                    usubll.IniciarSesion();
-                    //Aca se van a comprobar los permisos del usuario cuando se haga la Gestion de permisos
-                    //Sesion.ObtenerInstancia.EsteUsuario.Autorizaciones = bllpermiso.LlenarUsuario(Sesion.Instancia.EsteUsuario);
-                    //ComprobarPermisos(Sesion.ObtenerInstancia.EsteUsuario);
-
+                    ComprobarPermisos();
+                    FormParent.UsarioToolStripMenuItem.Enabled = true;
+                    FormParent.LogInToolStripMenu.Enabled = false;
+                    FormParent.salirDelSistemaToolStripMenuItem1.Enabled = true;
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Usuario o Contraseña incorrectos.");
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -73,5 +69,31 @@ namespace GUI
             }
 
         }
+
+
+
+        public void ComprobarPermisos()
+        {
+            foreach (ToolStripMenuItem item in FormParent.menuStrip1.Items)
+            {
+                item.Enabled = false;
+                item.Enabled = usubll.ComprobarPermiso(int.Parse(item.Tag.ToString()));
+                if (item.DropDown.Items.Count > 0)
+                {
+                    foreach (ToolStripMenuItem subitem in item.DropDown.Items)
+                    {
+                        subitem.Enabled = false;
+                        subitem.Enabled = usubll.ComprobarPermiso(int.Parse(subitem.Tag.ToString()));
+                    }
+                }
+            }
+            
+        }
+
+
+
+
+
+
     }
 }

@@ -42,7 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptador.cs" />
+    <Compile Include="ObserverIdioma\Idioma.cs" />
+    <Compile Include="ObserverIdioma\IIdiomaObserver.cs" />
+    <Compile Include="ObserverIdioma\ObjetoAuxiliarIdioma.cs" />
+    <Compile Include="PerfilesComposite\Autorizacion.cs" />
+    <Compile Include="PerfilesComposite\Permiso.cs" />
+    <Compile Include="PerfilesComposite\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sesion.cs" />
+    <Compile Include="ObserverIdioma\Subject.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
