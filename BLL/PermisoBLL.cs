@@ -8,6 +8,7 @@ using BE;
 using DAL;
 using SERVICIOS;
 using SERVICIOS.PerfilesComposite;
+using SERVICIOS;
 
 namespace BLL
 {

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using BE;
 using SERVICIOS.PerfilesComposite;
+using SERVICIOS;
 
 namespace DAL
 {
