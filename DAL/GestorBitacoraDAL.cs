@@ -63,13 +63,14 @@ namespace DAL
         {
             try
             {
+                cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "GrabarBitacora";
-                cmd.Parameters.AddWithValue("Actividad", accion);
-                cmd.Parameters.AddWithValue("Descripcion", información);
-                cmd.Parameters.AddWithValue("Fecha", DateTime.Now);
-                cmd.Parameters.AddWithValue("IdUsuario", idusuario);
+                cmd.Parameters.AddWithValue("actividad", accion);
+                cmd.Parameters.AddWithValue("desc", información);
+                cmd.Parameters.AddWithValue("fecha", DateTime.Now);
+                cmd.Parameters.AddWithValue("idUsr", idusuario);
                 cmd.ExecuteNonQuery();
 
 

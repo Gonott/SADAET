@@ -41,7 +41,8 @@ namespace BLL
             Sesion.ObtenerInstancia.EsteUsuario.Logueado = true;
             //Ahora se procede a cargar el perfil.
             CargarPerfil(Sesion.ObtenerInstancia.EsteUsuario);
-
+            GestorBitacoraBLL bitacorabll = new GestorBitacoraBLL();
+            bitacorabll.Grabar("Sesion Iniciada", "El usuario ha iniciado sesión");
         }
 
 
