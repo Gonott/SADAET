@@ -17,23 +17,24 @@ namespace DAL
         SqlConnection cn = AccesoDAL.ObtInstancia.ObtenerConexionSql();
         SqlCommand cmd = new SqlCommand();
 
-        public List<string> LeerBitacora()
+        public List<EventoBitacora> LeerBitacora()
         {
             try
             {
-                 List<string> registro = new List<string>();
+                 List<EventoBitacora> registro = new List<EventoBitacora>();
                  cmd.Connection = cn;
-                 cmd.CommandType = CommandType.Text;
-                 cmd.CommandText = "Select * from Bitacora";
+                 cmd.CommandType = CommandType.StoredProcedure;
+                 cmd.CommandText = "LeerBitacora";
                  cmd.Connection.Open();
                  SqlDataReader lector = cmd.ExecuteReader();
                  while(lector.Read() == true)
                 {
-                    string id = lector["IdEvento"].ToString();
-                    string descripcion = lector["Descripcion"].ToString();
-                    string fecha = lector["Fecha"].ToString();
-                    string NombreUsuario = lector["IdUsuario"].ToString();
-                    string evento = id + " " + fecha + " " + descripcion + " " + NombreUsuario;
+                    EventoBitacora evento = new EventoBitacora();
+                    evento.idEvento = int.Parse(lector["Id"].ToString());
+                    evento.actividad = lector["Actividad"].ToString();
+                    evento.información = lector["Descripcion"].ToString();
+                    evento.fecha = DateTime.Parse(lector["Fecha"].ToString());
+                    evento.nombreUsuario = lector["Usuario"].ToString();
                     registro.Add(evento);
                 }
                 cmd.Connection.Close();
@@ -58,14 +59,15 @@ namespace DAL
         }
 
 
-        public void Grabar(string accion, int idusuario)
+        public void Grabar(string accion, string información, int idusuario)
         {
             try
             {
                 cmd.Connection.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "GrabarBitacora"; 
-                cmd.Parameters.AddWithValue("Descripcion", accion);
+                cmd.CommandText = "GrabarBitacora";
+                cmd.Parameters.AddWithValue("Actividad", accion);
+                cmd.Parameters.AddWithValue("Descripcion", información);
                 cmd.Parameters.AddWithValue("Fecha", DateTime.Now);
                 cmd.Parameters.AddWithValue("IdUsuario", idusuario);
                 cmd.ExecuteNonQuery();

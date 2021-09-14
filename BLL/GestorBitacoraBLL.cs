@@ -13,7 +13,7 @@ namespace BLL
 
         GestorBitacoraDAL mapper = new GestorBitacoraDAL();
 
-        public List<string> LeerBitacora()
+        public List<EventoBitacora> LeerBitacora()
         {
             
             return mapper.LeerBitacora();
@@ -21,9 +21,9 @@ namespace BLL
         }
             
         
-        public void Grabar(string evento)
+        public void Grabar(string evento, string info)
         {
-            mapper.Grabar(evento, Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
+            mapper.Grabar(evento, info, Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
         }
 
     }
