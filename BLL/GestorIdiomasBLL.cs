@@ -56,7 +56,9 @@ namespace BLL
         {
             try
             {
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Alta de Idioma", "Se ingresó al sistema un nuevo idioma : " + nombre);
                 return mapper.AltaIdioma(nombre);
+                
             }
             catch (Exception)
             {

@@ -16,14 +16,11 @@ namespace BLL
 
 
         UsuarioDAL mapper = new UsuarioDAL();
-        
         PermisoBLL permisoBll = new PermisoBLL();
         RolBLL rolbll = new RolBLL();
 
         public bool ComprobarUsuario(Usuario UnUsuario)
         {
-            //Aca lo asigno a la Sesion Singleton
-           //Si existe el usuario, será mayor o igual
             int count = mapper.ValidarUsuario();
             bool rta = false;
             if (count >= 1)
@@ -41,8 +38,8 @@ namespace BLL
             Sesion.ObtenerInstancia.EsteUsuario.Logueado = true;
             //Ahora se procede a cargar el perfil.
             CargarPerfil(Sesion.ObtenerInstancia.EsteUsuario);
-            GestorBitacoraBLL bitacorabll = new GestorBitacoraBLL();
-            bitacorabll.Grabar("Sesion Iniciada", "El usuario ha iniciado sesión");
+            GestorBitacoraBLL.ObtenerInstancia.Grabar("Sesion Iniciada", "El usuario ha iniciado sesión");
+
         }
 
 
@@ -129,9 +126,12 @@ namespace BLL
 
         public void CerrarSesion()
         {
-            
-           
+
+            GestorBitacoraBLL.ObtenerInstancia.Grabar("Sesion Cerrada", "El usuario ha cerrado sesión");
             Sesion.ObtenerInstancia.CerrarSesion();
+                       
+            GC.Collect();
+
         }
 
     }

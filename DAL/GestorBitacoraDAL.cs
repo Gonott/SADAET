@@ -64,6 +64,7 @@ namespace DAL
             try
             {
                 cmd.Connection = cn;
+                cmd.Parameters.Clear();
                 cmd.Connection.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "GrabarBitacora";

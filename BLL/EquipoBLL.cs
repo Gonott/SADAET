@@ -75,7 +75,7 @@ namespace BLL
                 }
 
             }
-            
+            GestorBitacoraBLL.ObtenerInstancia.Grabar("Busqueda de Equipo Adecuado", "Se realizó la busqueda de un equipo adecuado empleado: " + empleado.Nombre );
             return MejorEquipo;
         
 

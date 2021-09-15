@@ -60,6 +60,8 @@ namespace BLL
             Adecuados.Add(DiscoAdecuado);
             Adecuados.Add(RamAdecuada);
             Adecuados.Add(ProcesadorAdecuado);
+
+            GestorBitacoraBLL.ObtenerInstancia.Grabar("Busqueda de componentes", "Se buscaron componentes adecuados para "+ emp.Nombre);
             return Adecuados;
 
         }

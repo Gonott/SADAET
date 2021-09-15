@@ -135,6 +135,7 @@ namespace GUI
                 llenarrol();
                 Roloperador.Alta(roltemporal);
                 ActualizarRoles();
+                
             }
             catch (Exception ex)
             {

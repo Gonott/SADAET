@@ -8,7 +8,6 @@ using BE;
 using DAL;
 using SERVICIOS;
 using SERVICIOS.PerfilesComposite;
-using SERVICIOS;
 
 namespace BLL
 {
@@ -48,6 +47,7 @@ namespace BLL
         }
 
 
+
    
         
 #region Asignaciones
@@ -57,6 +57,7 @@ namespace BLL
             {
                 usu.Autorizaciones.Add(perm);
                 mapper.AsignarPermisoAUsuario(perm, usu);
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Agregación de Permiso" , "Se le agregó el permiso" + perm.Nombre + " al usuario " + usu.NombreUsuario);
             }
             catch (Exception ex)
             {
@@ -76,6 +77,7 @@ namespace BLL
                 
                 mapper.AsignarPermisoARol(perm, unrol);
                 unrol.AgregarAutorizacion(perm);
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Asignación de permiso a Rol", "Se le asignó el permiso " + perm.Nombre + " a " + unrol.Nombre);
 
             }
             catch (Exception ex)
@@ -100,6 +102,7 @@ namespace BLL
             {
                 usu.Autorizaciones.Remove(perm);
                 mapper.DesasignarPermisoUsuario(perm, usu);
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Desasignación de Permiso", "Se le quito el permiso" + perm.Nombre + " al usuario " + usu.NombreUsuario);
             }
             catch (Exception ex)
             {
@@ -118,6 +121,8 @@ namespace BLL
 
                 mapper.DesasignarPermisoRol(perm, unrol);
                 unrol.RemoverAutorizacion(perm);
+
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Desasignación de permiso a Rol", "Se le quitó el permiso " + perm.Nombre + " a " + unrol.Nombre);
 
             }
             catch (Exception ex)
@@ -188,6 +193,7 @@ namespace BLL
         {
             try
             {
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Alta de permiso", "Se dio de alta el permiso : " + p.Nombre);
                 mapper.AltaPermiso(p);
             }
             catch (Exception)
@@ -203,6 +209,7 @@ namespace BLL
             try
             {
                 mapper.BajaPermiso(p);
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Baja de permiso", "Se dio de baja el permiso : " + p.Nombre);
             }
             catch (Exception)
             {
@@ -217,6 +224,7 @@ namespace BLL
             try
             {
                 mapper.Modificar(p);
+                GestorBitacoraBLL.ObtenerInstancia.Grabar("Modificación de permiso", "Se modificó el permiso : " + p.Nombre);
             }
             catch (Exception)
             {

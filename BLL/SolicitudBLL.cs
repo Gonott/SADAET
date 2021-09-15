@@ -28,6 +28,7 @@ namespace BLL
 						Filtradas.Add(item);
 					}
 				}
+				GestorBitacoraBLL.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron las solicitudes con estado " + estado);
 				return Filtradas;
 			}
 			catch (Exception)
@@ -43,6 +44,8 @@ namespace BLL
 			try
 			{
 				mapper.AsignarEquipo(equipo, solicitud);
+
+				GestorBitacoraBLL.ObtenerInstancia.Grabar("Asignación de Equipo", "Se asignó el equipo: " + equipo.CodInventario + " a la solicitud " + solicitud.CodPedido);
 			}
 			catch (Exception)
 			{
@@ -58,6 +61,7 @@ namespace BLL
 			try
 			{
 				mapper.ModificarEstado(unaSolicitud, nuevoEstado);
+				GestorBitacoraBLL.ObtenerInstancia.Grabar("Cambio de Estado", "Cambió el estado de la solicitud " + unaSolicitud.CodPedido + " a " + nuevoEstado);
 			}
 			catch (Exception)
 			{
@@ -75,6 +79,7 @@ namespace BLL
 				nuevaSolicitud.estado = Estado.Asignación;
 				nuevaSolicitud.Fecha = DateTime.Now;
 				mapper.Alta(nuevaSolicitud);
+				GestorBitacoraBLL.ObtenerInstancia.Grabar("Ingreso de Solicitud", "Se ingresó al sistema la solicitud para " + nuevaSolicitud.empleado.Nombre);
 			}
 			catch (Exception)
 			{

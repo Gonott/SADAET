@@ -70,7 +70,7 @@ namespace GUI
             try
             {
                 solicitudBll.IngresarSolicitud(solicitudTemporal);
-                MessageBox.Show("Listo se ha solicitado un equipo para  " + empleadoTemporal.Nombre);
+                MessageBox.Show("Listo, se ha solicitado un equipo para  " + empleadoTemporal.Nombre);
             }
             catch (Exception)
             {
