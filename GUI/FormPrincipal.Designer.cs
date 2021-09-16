@@ -51,6 +51,9 @@
             this.idiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarIdiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.auditoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlDeCambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +66,8 @@
             this.entregasYToolStripMenuItem,
             this.sectorInventarioToolStripMenuItem,
             this.perfilesToolStripMenuItem,
-            this.idiomasToolStripMenuItem});
+            this.idiomasToolStripMenuItem,
+            this.auditoríaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(937, 24);
@@ -285,6 +289,31 @@
             this.agregarIdiomasToolStripMenuItem.Text = "Agregar Idiomas";
             this.agregarIdiomasToolStripMenuItem.Click += new System.EventHandler(this.agregarIdiomasToolStripMenuItem_Click);
             // 
+            // auditoríaToolStripMenuItem
+            // 
+            this.auditoríaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bitacoraToolStripMenuItem,
+            this.controlDeCambiosToolStripMenuItem});
+            this.auditoríaToolStripMenuItem.Name = "auditoríaToolStripMenuItem";
+            this.auditoríaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.auditoríaToolStripMenuItem.Tag = "20";
+            this.auditoríaToolStripMenuItem.Text = "Auditoría";
+            // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitacoraToolStripMenuItem.Tag = "21";
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
+            // controlDeCambiosToolStripMenuItem
+            // 
+            this.controlDeCambiosToolStripMenuItem.Name = "controlDeCambiosToolStripMenuItem";
+            this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlDeCambiosToolStripMenuItem.Tag = "22";
+            this.controlDeCambiosToolStripMenuItem.Text = "Control de Cambios";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +357,9 @@
         private System.Windows.Forms.ToolStripMenuItem idiomasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarIdiomaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarIdiomasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem auditoríaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlDeCambiosToolStripMenuItem;
     }
 }
 

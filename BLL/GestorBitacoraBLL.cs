@@ -35,8 +35,17 @@ namespace BLL
 
         public List<EventoBitacora> LeerBitacora()
         {
+            try
+            {
+                return mapper.LeerBitacora();
+            }
+            catch (Exception)
+            {
 
-            return mapper.LeerBitacora();
+                throw;
+            }
+
+            
 
         }
 

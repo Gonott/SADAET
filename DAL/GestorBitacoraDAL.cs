@@ -21,6 +21,7 @@ namespace DAL
         {
             try
             {
+                cmd.Parameters.Clear();
                  List<EventoBitacora> registro = new List<EventoBitacora>();
                  cmd.Connection = cn;
                  cmd.CommandType = CommandType.StoredProcedure;
@@ -34,7 +35,7 @@ namespace DAL
                     evento.actividad = lector["Actividad"].ToString();
                     evento.información = lector["Descripcion"].ToString();
                     evento.fecha = DateTime.Parse(lector["Fecha"].ToString());
-                    evento.nombreUsuario = lector["Usuario"].ToString();
+                    evento.nombreUsuario = lector["NombreUsuario"].ToString();
                     registro.Add(evento);
                 }
                 cmd.Connection.Close();

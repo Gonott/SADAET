@@ -26,7 +26,7 @@ namespace DAL
             {
                 cmd.Parameters.Clear();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertarPermiso";
+                cmd.CommandText = "AltaPermiso";
                 cmd.Parameters.AddWithValue("@Id", unper.Id);
                 cmd.Parameters.AddWithValue("@nombre", unper.Nombre);
                 cmd.Parameters.AddWithValue("@desc", unper.Descripcion);

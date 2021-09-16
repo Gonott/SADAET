@@ -223,5 +223,12 @@ namespace GUI
             formBuscarComp.MdiParent = this;
             formBuscarComp.Show();
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Bitácora formBitacora = new Form_Bitácora();
+            formBitacora.MdiParent = this;
+            formBitacora.Show();
+        }
     }
 }

@@ -112,6 +112,12 @@
     <Compile Include="Form_AgregarIdioma.Designer.cs">
       <DependentUpon>Form_AgregarIdioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Bitácora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Bitácora.Designer.cs">
+      <DependentUpon>Form_Bitácora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_BuscarComponentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AgregarIdioma.resx">
       <DependentUpon>Form_AgregarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Bitácora.resx">
+      <DependentUpon>Form_Bitácora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_BuscarComponentes.resx">
       <DependentUpon>Form_BuscarComponentes.cs</DependentUpon>
