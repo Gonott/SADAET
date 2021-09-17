@@ -50,6 +50,41 @@ namespace BLL
         }
 
 
+
+        public List<EventoBitacora> FiltrarPorFecha(List<EventoBitacora> aFiltrar, DateTime desde, DateTime hasta)
+        {
+            List<EventoBitacora> filtrados = new List<EventoBitacora>();
+            foreach (EventoBitacora evento in aFiltrar)
+            {
+                if (desde <= evento.fecha && evento.fecha <= hasta)
+                {
+                    filtrados.Add(evento);
+
+                }
+                
+            }
+            return filtrados;
+        }
+
+
+        public List<EventoBitacora> FiltrarPorUsuario(List<EventoBitacora> aFiltrar, Usuario usr)
+        {
+            
+            List<EventoBitacora> filtrados = new List<EventoBitacora>();
+            foreach (EventoBitacora evento in aFiltrar)
+            {
+                if (evento.nombreUsuario == usr.NombreUsuario)
+                {
+                    filtrados.Add(evento);
+                }
+
+            }
+            return filtrados;
+        }
+
+
+
+
         public void Grabar(string evento, string info)
         {
             mapper.Grabar(evento, info, Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);

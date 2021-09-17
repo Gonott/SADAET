@@ -38,8 +38,8 @@ namespace GUI
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.labelDesde = new System.Windows.Forms.Label();
             this.labelHasta = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listViewEventos
@@ -60,6 +60,7 @@ namespace GUI
             this.AplicarBtn.Tag = "32";
             this.AplicarBtn.Text = "Aplicar";
             this.AplicarBtn.UseVisualStyleBackColor = true;
+            this.AplicarBtn.Click += new System.EventHandler(this.AplicarBtn_Click);
             // 
             // checkBoxUsuario
             // 
@@ -70,6 +71,7 @@ namespace GUI
             this.checkBoxUsuario.TabIndex = 5;
             this.checkBoxUsuario.Text = "Usuario";
             this.checkBoxUsuario.UseVisualStyleBackColor = true;
+            this.checkBoxUsuario.CheckedChanged += new System.EventHandler(this.checkBoxUsuario_CheckedChanged);
             // 
             // checkBoxfecha
             // 
@@ -80,6 +82,7 @@ namespace GUI
             this.checkBoxfecha.TabIndex = 6;
             this.checkBoxfecha.Text = "Fecha";
             this.checkBoxfecha.UseVisualStyleBackColor = true;
+            this.checkBoxfecha.CheckedChanged += new System.EventHandler(this.checkBoxfecha_CheckedChanged);
             // 
             // checkBoxActividad
             // 
@@ -126,14 +129,6 @@ namespace GUI
             this.labelHasta.TabIndex = 11;
             this.labelHasta.Text = "Hasta";
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(1026, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 20);
-            this.textBox1.TabIndex = 12;
-            // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
@@ -142,13 +137,22 @@ namespace GUI
             this.textBox2.Size = new System.Drawing.Size(173, 20);
             this.textBox2.TabIndex = 13;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(999, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 14;
+            // 
             // Form_Bitácora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 348);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelHasta);
             this.Controls.Add(this.labelDesde);
             this.Controls.Add(this.dateTimePicker2);
@@ -177,7 +181,7 @@ namespace GUI
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label labelDesde;
         private System.Windows.Forms.Label labelHasta;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
