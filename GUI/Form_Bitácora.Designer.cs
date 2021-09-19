@@ -45,7 +45,7 @@ namespace GUI
             // listViewEventos
             // 
             this.listViewEventos.HideSelection = false;
-            this.listViewEventos.Location = new System.Drawing.Point(27, 50);
+            this.listViewEventos.Location = new System.Drawing.Point(12, 12);
             this.listViewEventos.Name = "listViewEventos";
             this.listViewEventos.Size = new System.Drawing.Size(872, 282);
             this.listViewEventos.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace GUI
             // 
             // AplicarBtn
             // 
-            this.AplicarBtn.Location = new System.Drawing.Point(1090, 214);
+            this.AplicarBtn.Location = new System.Drawing.Point(1075, 176);
             this.AplicarBtn.Name = "AplicarBtn";
             this.AplicarBtn.Size = new System.Drawing.Size(109, 23);
             this.AplicarBtn.TabIndex = 4;
@@ -65,7 +65,7 @@ namespace GUI
             // checkBoxUsuario
             // 
             this.checkBoxUsuario.AutoSize = true;
-            this.checkBoxUsuario.Location = new System.Drawing.Point(917, 55);
+            this.checkBoxUsuario.Location = new System.Drawing.Point(902, 17);
             this.checkBoxUsuario.Name = "checkBoxUsuario";
             this.checkBoxUsuario.Size = new System.Drawing.Size(62, 17);
             this.checkBoxUsuario.TabIndex = 5;
@@ -76,7 +76,7 @@ namespace GUI
             // checkBoxfecha
             // 
             this.checkBoxfecha.AutoSize = true;
-            this.checkBoxfecha.Location = new System.Drawing.Point(918, 84);
+            this.checkBoxfecha.Location = new System.Drawing.Point(903, 46);
             this.checkBoxfecha.Name = "checkBoxfecha";
             this.checkBoxfecha.Size = new System.Drawing.Size(56, 17);
             this.checkBoxfecha.TabIndex = 6;
@@ -87,7 +87,7 @@ namespace GUI
             // checkBoxActividad
             // 
             this.checkBoxActividad.AutoSize = true;
-            this.checkBoxActividad.Location = new System.Drawing.Point(918, 171);
+            this.checkBoxActividad.Location = new System.Drawing.Point(903, 133);
             this.checkBoxActividad.Name = "checkBoxActividad";
             this.checkBoxActividad.Size = new System.Drawing.Size(92, 17);
             this.checkBoxActividad.TabIndex = 7;
@@ -98,7 +98,7 @@ namespace GUI
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(999, 105);
+            this.dateTimePicker1.Location = new System.Drawing.Point(984, 67);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 8;
@@ -107,7 +107,7 @@ namespace GUI
             // dateTimePicker2
             // 
             this.dateTimePicker2.Enabled = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(999, 131);
+            this.dateTimePicker2.Location = new System.Drawing.Point(984, 93);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 9;
@@ -115,7 +115,7 @@ namespace GUI
             // labelDesde
             // 
             this.labelDesde.AutoSize = true;
-            this.labelDesde.Location = new System.Drawing.Point(955, 111);
+            this.labelDesde.Location = new System.Drawing.Point(940, 73);
             this.labelDesde.Name = "labelDesde";
             this.labelDesde.Size = new System.Drawing.Size(38, 13);
             this.labelDesde.TabIndex = 10;
@@ -124,7 +124,7 @@ namespace GUI
             // labelHasta
             // 
             this.labelHasta.AutoSize = true;
-            this.labelHasta.Location = new System.Drawing.Point(955, 137);
+            this.labelHasta.Location = new System.Drawing.Point(940, 99);
             this.labelHasta.Name = "labelHasta";
             this.labelHasta.Size = new System.Drawing.Size(35, 13);
             this.labelHasta.TabIndex = 11;
@@ -133,7 +133,7 @@ namespace GUI
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(1026, 171);
+            this.textBox2.Location = new System.Drawing.Point(1011, 133);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(173, 20);
             this.textBox2.TabIndex = 13;
@@ -143,7 +143,7 @@ namespace GUI
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(999, 53);
+            this.comboBox1.Location = new System.Drawing.Point(984, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 14;
@@ -152,7 +152,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 348);
+            this.ClientSize = new System.Drawing.Size(1224, 311);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.labelHasta);
