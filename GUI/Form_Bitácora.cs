@@ -77,27 +77,50 @@ namespace GUI
         private void AplicarBtn_Click(object sender, EventArgs e)
         {
 
-            if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == true)// & checkBoxActividad.Checked == true)
+            if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == true)          
             {
-
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.FiltrarPorFecha(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.FiltrarPorUsuario(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
-                //aca eventos filtrados por keyword.
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
-            else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == false)
+            else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == false)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.FiltrarPorFecha(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
-                
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
+                CargarEventos(eventosFiltrados);
 
             }
-            else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == true)
+            else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == true)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.FiltrarPorUsuario(eventos, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
+                CargarEventos(eventosFiltrados);
+            }
+            else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == true)
+            {
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
+                CargarEventos(eventosFiltrados);
+            }
+            else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == false)
+            {
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                CargarEventos(eventosFiltrados);
+
+            }
+            else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == false)
+            {
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
+                CargarEventos(eventosFiltrados);
+            }
+            else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == true)
+            {
+                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
             else
-            {
+            { 
                 CargarEventos(eventos);
             }
 
@@ -127,6 +150,18 @@ namespace GUI
             if (checkBoxUsuario.Checked == false)
             {
                 comboBox1.Enabled = false;
+            }
+        }
+
+        private void checkBoxActividad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxActividad.Checked == true)
+            {
+                textBox2.Enabled = true;
+            }
+            if(checkBoxActividad.Checked == false)
+            {
+                textBox2.Enabled = false;
             }
         }
     }

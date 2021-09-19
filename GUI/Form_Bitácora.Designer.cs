@@ -93,6 +93,7 @@ namespace GUI
             this.checkBoxActividad.TabIndex = 7;
             this.checkBoxActividad.Text = "Palabra Clave";
             this.checkBoxActividad.UseVisualStyleBackColor = true;
+            this.checkBoxActividad.CheckedChanged += new System.EventHandler(this.checkBoxActividad_CheckedChanged);
             // 
             // dateTimePicker1
             // 

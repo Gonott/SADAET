@@ -51,7 +51,7 @@ namespace BLL
 
 
 
-        public List<EventoBitacora> FiltrarPorFecha(List<EventoBitacora> aFiltrar, DateTime desde, DateTime hasta)
+        public List<EventoBitacora> Filtrar(List<EventoBitacora> aFiltrar, DateTime desde, DateTime hasta)
         {
             List<EventoBitacora> filtrados = new List<EventoBitacora>();
             foreach (EventoBitacora evento in aFiltrar)
@@ -67,7 +67,7 @@ namespace BLL
         }
 
 
-        public List<EventoBitacora> FiltrarPorUsuario(List<EventoBitacora> aFiltrar, Usuario usr)
+        public  List<EventoBitacora> Filtrar(List<EventoBitacora> aFiltrar, Usuario usr)
         {
             
             List<EventoBitacora> filtrados = new List<EventoBitacora>();
@@ -83,11 +83,36 @@ namespace BLL
         }
 
 
+        public List<EventoBitacora> Filtrar(List<EventoBitacora> aFiltrar, string palabra)
+        {
+
+            List<EventoBitacora> filtrados = new List<EventoBitacora>();
+            foreach (EventoBitacora evento in aFiltrar)
+            {
+                if (evento.actividad.Contains(palabra) || evento.información.Contains(palabra))
+                {
+                    filtrados.Add(evento);
+                }
+
+            }
+            return filtrados;
+
+        }
+
 
 
         public void Grabar(string evento, string info)
         {
-            mapper.Grabar(evento, info, Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
+            try
+            {
+                mapper.Grabar(evento, info, Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
     }
