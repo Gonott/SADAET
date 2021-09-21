@@ -97,6 +97,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idequipo", equipo.CodInventario);
                 cmd.Parameters.AddWithValue("@CodPedido", solicitud.CodPedido);
                 cmd.Parameters.AddWithValue("@estado", solicitud.estado.ToString());
+                cmd.Parameters.AddWithValue("@idusr", Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -128,6 +129,7 @@ namespace DAL
                 cmd.CommandText = "AsignarRemito";
                 cmd.Parameters.AddWithValue("@idSolicitud", unaSolicitud.CodPedido);
                 cmd.Parameters.AddWithValue("@remito", nroDocumento);
+                cmd.Parameters.AddWithValue("@idusr", Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -158,6 +160,7 @@ namespace DAL
                 cmd.CommandText = "AsignarComodato";
                 cmd.Parameters.AddWithValue("@idSolicitud", unaSolicitud.CodPedido);
                 cmd.Parameters.AddWithValue("@nroComodato", nroDocumento);
+                cmd.Parameters.AddWithValue("@idusr", Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -186,6 +189,7 @@ namespace DAL
                 cmd.CommandText = "ModificarEstadoSolicitud";
                 cmd.Parameters.AddWithValue("@idSolicitud", nueva.CodPedido);
                 cmd.Parameters.AddWithValue("@estado", estado.ToString());
+                cmd.Parameters.AddWithValue("@idusr", Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -216,6 +220,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@idEmpleado", nueva.empleado.Legajo);
                 cmd.Parameters.AddWithValue("@estado",nueva.estado.ToString() );
                 cmd.Parameters.AddWithValue("@fecha",nueva.Fecha);
+                cmd.Parameters.AddWithValue("@idusr", Sesion.ObtenerInstancia.EsteUsuario.IdUsuario);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
