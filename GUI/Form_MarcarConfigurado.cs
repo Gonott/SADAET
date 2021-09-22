@@ -100,9 +100,7 @@ namespace GUI
                 //Armamos el objeto REMITO
                 Remito remito = new Remito();
                 remito.Fecha = DateTime.Now;
-                //Random r = new Random();
-                //remito.Numero = r.Next(1, 10000);
-                remito.Numero = int.Parse(DateTime.Now.ToString("ddMMyyHHmm"));
+                remito.Numero = long.Parse(DateTime.Now.ToString("ddMMyyHHmm"));
 
 
                 //usamos la solicitud para llenar el remito fisico.

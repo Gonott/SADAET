@@ -120,7 +120,7 @@ namespace DAL
 
         }
 
-       public void AsignarRemito(Solicitud unaSolicitud, int nroDocumento)
+       public void AsignarRemito(Solicitud unaSolicitud, long nroDocumento)
         {
             try
             {
@@ -151,7 +151,7 @@ namespace DAL
 
         }
 
-        public void AsignarComodato(Solicitud unaSolicitud, int nroDocumento)
+        public void AsignarComodato(Solicitud unaSolicitud, long nroDocumento)
         {
             try
             {

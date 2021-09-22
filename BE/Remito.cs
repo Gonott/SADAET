@@ -11,7 +11,7 @@ namespace BE
 
         public DateTime Fecha { get; set; }
 
-        public int Numero { get; set; }
+        public long Numero { get; set; }
 
 
 

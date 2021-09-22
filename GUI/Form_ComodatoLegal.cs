@@ -87,7 +87,7 @@ namespace GUI
                 reportViewer1.LocalReport.DataSources.Clear();
                 //uso los parametros para llenar el encabezado del Remito.
                 ReportParameter[] parameters = new ReportParameter[6];
-                int nrocomodato = int.Parse(DateTime.Now.ToString("ddMMyyHHmm"));
+                long nrocomodato = long.Parse(DateTime.Now.ToString("ddMMyyHHmm"));
                 parameters[0] = new ReportParameter("pDNI", solicitudtemporal.empleado.DNI.ToString());
                 parameters[1] = new ReportParameter("pNombre", solicitudtemporal.empleado.Nombre);
                 parameters[2] = new ReportParameter("pDireccion", solicitudtemporal.empleado.Dirección);

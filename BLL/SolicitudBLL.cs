@@ -88,7 +88,7 @@ namespace BLL
 			}
 		}
 
-		public void AsignarDocumento(Solicitud unasolicitud, int nroDoc)
+		public void AsignarDocumento(Solicitud unasolicitud, long nroDoc)
 		{
 			try
 			{
