@@ -230,5 +230,12 @@ namespace GUI
             formBitacora.MdiParent = this;
             formBitacora.Show();
         }
+
+        private void controlDeCambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormControl_de_Cambios formControlCambios = new FormControl_de_Cambios();
+            formControlCambios.MdiParent = this;
+            formControlCambios.Show();
+        }
     }
 }

@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using SERVICIOS;
-using SERVICIOS.ObserverIdioma;
 
 namespace GUI
 {

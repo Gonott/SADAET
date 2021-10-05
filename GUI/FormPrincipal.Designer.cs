@@ -313,6 +313,7 @@
             this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controlDeCambiosToolStripMenuItem.Tag = "22";
             this.controlDeCambiosToolStripMenuItem.Text = "Control de Cambios";
+            this.controlDeCambiosToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambiosToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
