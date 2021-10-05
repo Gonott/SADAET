@@ -13,6 +13,20 @@ namespace BLL
 		SolicitudDAL mapper = new SolicitudDAL();
 
 	
+		public List<Solicitud> ListarSolicitudes()
+        {
+            try
+            {
+				GestorBitacoraBLL.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron todas las solicitudes");
+				return mapper.ListarSolicitudes();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
 
 		public List<Solicitud> ListarPorEstado(Estado estado)
