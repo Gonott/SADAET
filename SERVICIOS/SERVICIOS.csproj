@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptador.cs" />
+    <Compile Include="EstadoSolicitud.cs" />
     <Compile Include="EventoBitacora.cs" />
     <Compile Include="ObserverIdioma\Idioma.cs" />
     <Compile Include="ObserverIdioma\IIdiomaObserver.cs" />
