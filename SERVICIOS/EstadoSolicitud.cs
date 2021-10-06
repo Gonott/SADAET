@@ -12,7 +12,7 @@ namespace SERVICIOS
     {
         public int id { get; set; }
 
-        public int idSolicitud { get; set; }
+        //public int idSolicitud { get; set; }
 
         public int idEmpleado { get; set; }
 
@@ -20,11 +20,11 @@ namespace SERVICIOS
 
         public string estado { get; set; }
 
-        public int fecha { get; set; }
+        public DateTime fecha { get; set; }
 
-        public int nroRemito { get; set; }
+        public long nroRemito { get; set; }
 
-        public int nroComodato { get; set; }
+        public long nroComodato { get; set; }
 
         public DateTime fechaEditado{ get; set; }
 

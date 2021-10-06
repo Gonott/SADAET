@@ -11,7 +11,7 @@ namespace BLL
     public class SolicitudBLL
     {
 		SolicitudDAL mapper = new SolicitudDAL();
-
+		GestorCambiosEstadoBLL cambiosEstadoBLL = new GestorCambiosEstadoBLL();
 	
 		public List<Solicitud> ListarSolicitudes()
         {
@@ -58,7 +58,7 @@ namespace BLL
 			try
 			{
 				mapper.AsignarEquipo(equipo, solicitud);
-
+				cambiosEstadoBLL.GrabarEstadoSolicitud(solicitud);
 				GestorBitacoraBLL.ObtenerInstancia.Grabar("Asignación de Equipo", "Se asignó el equipo: " + equipo.CodInventario + " a la solicitud " + solicitud.CodPedido);
 			}
 			catch (Exception)
@@ -75,6 +75,7 @@ namespace BLL
 			try
 			{
 				mapper.ModificarEstado(unaSolicitud, nuevoEstado);
+				cambiosEstadoBLL.GrabarEstadoSolicitud(unaSolicitud);
 				GestorBitacoraBLL.ObtenerInstancia.Grabar("Cambio de Estado", "Cambió el estado de la solicitud " + unaSolicitud.CodPedido + " a " + nuevoEstado);
 			}
 			catch (Exception)
@@ -110,12 +111,14 @@ namespace BLL
 				{
 					mapper.AsignarComodato(unasolicitud, nroDoc);
 					CambiarEstado(unasolicitud, Estado.CorreoInterno);
+					cambiosEstadoBLL.GrabarEstadoSolicitud(unasolicitud);
 				}
 				if (unasolicitud.estado == Estado.Preparación)
 				{
 					mapper.AsignarRemito(unasolicitud, nroDoc);
 					CambiarEstado(unasolicitud, Estado.ComodatoLegal);
-					
+					cambiosEstadoBLL.GrabarEstadoSolicitud(unasolicitud);
+
 				}
 				
 			}

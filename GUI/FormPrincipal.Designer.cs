@@ -294,6 +294,7 @@
             this.auditoríaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bitacoraToolStripMenuItem,
             this.controlDeCambiosToolStripMenuItem});
+            this.auditoríaToolStripMenuItem.Enabled = false;
             this.auditoríaToolStripMenuItem.Name = "auditoríaToolStripMenuItem";
             this.auditoríaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.auditoríaToolStripMenuItem.Tag = "20";
@@ -301,6 +302,7 @@
             // 
             // bitacoraToolStripMenuItem
             // 
+            this.bitacoraToolStripMenuItem.Enabled = false;
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
             this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitacoraToolStripMenuItem.Tag = "21";
@@ -309,6 +311,7 @@
             // 
             // controlDeCambiosToolStripMenuItem
             // 
+            this.controlDeCambiosToolStripMenuItem.Enabled = false;
             this.controlDeCambiosToolStripMenuItem.Name = "controlDeCambiosToolStripMenuItem";
             this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.controlDeCambiosToolStripMenuItem.Tag = "22";

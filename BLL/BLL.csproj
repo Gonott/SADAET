@@ -46,6 +46,7 @@
     <Compile Include="EmpleadoBLL.cs" />
     <Compile Include="EquipoBLL.cs" />
     <Compile Include="GestorBitacoraBLL.cs" />
+    <Compile Include="GestorCambiosEstadoBLL.cs" />
     <Compile Include="PerifericoBLL.cs" />
     <Compile Include="PermisoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
