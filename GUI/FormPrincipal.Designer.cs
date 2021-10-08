@@ -54,6 +54,7 @@
             this.auditoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeCambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupYRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -293,7 +294,8 @@
             // 
             this.auditoríaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bitacoraToolStripMenuItem,
-            this.controlDeCambiosToolStripMenuItem});
+            this.controlDeCambiosToolStripMenuItem,
+            this.backupYRestoreToolStripMenuItem});
             this.auditoríaToolStripMenuItem.Enabled = false;
             this.auditoríaToolStripMenuItem.Name = "auditoríaToolStripMenuItem";
             this.auditoríaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
@@ -317,6 +319,14 @@
             this.controlDeCambiosToolStripMenuItem.Tag = "22";
             this.controlDeCambiosToolStripMenuItem.Text = "Control de Cambios";
             this.controlDeCambiosToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambiosToolStripMenuItem_Click);
+            // 
+            // backupYRestoreToolStripMenuItem
+            // 
+            this.backupYRestoreToolStripMenuItem.Enabled = false;
+            this.backupYRestoreToolStripMenuItem.Name = "backupYRestoreToolStripMenuItem";
+            this.backupYRestoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupYRestoreToolStripMenuItem.Tag = "23";
+            this.backupYRestoreToolStripMenuItem.Text = "Backup y Restore";
             // 
             // FormPrincipal
             // 
@@ -364,6 +374,7 @@
         private System.Windows.Forms.ToolStripMenuItem auditoríaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlDeCambiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupYRestoreToolStripMenuItem;
     }
 }
 
