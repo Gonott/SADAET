@@ -18,8 +18,11 @@ namespace GUI
         SolicitudBLL solicitudBLL = new SolicitudBLL();
         Solicitud solicitudTemporal = new Solicitud();
         List<Solicitud> solicitudes = new List<Solicitud>();
+        List<EstadoSolicitud> estados = new List<EstadoSolicitud>();
+
 
         GestorCambiosEstadoBLL gestorbll = new GestorCambiosEstadoBLL();
+        EstadoSolicitud estadoTemporal = new EstadoSolicitud();
 
 
         public FormControl_de_Cambios()
@@ -44,7 +47,8 @@ namespace GUI
 
         public void ActualizarEstados(Solicitud sol)
         {
-            dataGridViewEstados.DataSource = gestorbll.VerEstadosSolicitud(sol);
+            estados = gestorbll.VerEstadosSolicitud(sol);
+            dataGridViewEstados.DataSource = estados;
             dataGridViewEstados.ReadOnly = true;
             dataGridViewEstados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
@@ -79,6 +83,52 @@ namespace GUI
             {
                 MessageBox.Show("Debe hacer click dentro de las casillas");
             }
+        }
+
+        private void dataGridViewEstados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridViewEstados.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dataGridViewEstados.Rows[e.RowIndex].Selected = true;
+                    if (estadoTemporal == null)
+                    {
+                        estadoTemporal = new EstadoSolicitud();
+                    }
+                    int id = int.Parse(dataGridViewEstados.CurrentRow.Cells["Id"].Value.ToString());
+                    foreach (EstadoSolicitud estado in estados)
+                    {
+                        if (estado.id == id)
+                        {
+                            estadoTemporal = estado;
+                        }
+                    }
+
+                }
+
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Debe hacer click dentro de las casillas");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                gestorbll.VolverEstado(estadoTemporal);
+                MessageBox.Show("Listo, se ha vuelto al estado" + estadoTemporal.id + " de fecha " + estadoTemporal.fechaEditado);
+                ActualizarSolicitudes();
+                dataGridViewEstados.DataSource = null;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

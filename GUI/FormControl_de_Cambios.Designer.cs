@@ -65,6 +65,7 @@ namespace GUI
             this.dataGridViewEstados.Name = "dataGridViewEstados";
             this.dataGridViewEstados.Size = new System.Drawing.Size(754, 178);
             this.dataGridViewEstados.TabIndex = 4;
+            this.dataGridViewEstados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEstados_CellClick);
             // 
             // LabelHistorico
             // 
@@ -83,6 +84,7 @@ namespace GUI
             this.button1.TabIndex = 6;
             this.button1.Text = "Volver Estado";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormControl_de_Cambios
             // 
