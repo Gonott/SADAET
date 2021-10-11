@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using BE;
 using SERVICIOS.ObserverIdioma;
 using System.Data;
+using SERVICIOS;
 
 namespace DAL
 {

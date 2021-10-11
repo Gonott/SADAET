@@ -45,6 +45,7 @@
     <Compile Include="ComponenteBLL.cs" />
     <Compile Include="EmpleadoBLL.cs" />
     <Compile Include="EquipoBLL.cs" />
+    <Compile Include="BackupRestoreBLL.cs" />
     <Compile Include="GestorBitacoraBLL.cs" />
     <Compile Include="GestorCambiosEstadoBLL.cs" />
     <Compile Include="PerifericoBLL.cs" />

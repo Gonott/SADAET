@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDAL.cs" />
+    <Compile Include="BackupRestoreDAL.cs" />
     <Compile Include="ComponenteDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="GestorCambiosEstadoDAL.cs" />

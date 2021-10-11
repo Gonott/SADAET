@@ -46,7 +46,7 @@ namespace BLL
             }
             catch (Exception)
             {
-
+                 
                 throw;
             }
 
