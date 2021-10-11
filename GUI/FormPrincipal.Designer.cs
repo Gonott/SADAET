@@ -55,6 +55,7 @@
             this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlDeCambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupYRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.digitosVerificadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,7 +296,8 @@
             this.auditoríaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bitacoraToolStripMenuItem,
             this.controlDeCambiosToolStripMenuItem,
-            this.backupYRestoreToolStripMenuItem});
+            this.backupYRestoreToolStripMenuItem,
+            this.digitosVerificadoresToolStripMenuItem});
             this.auditoríaToolStripMenuItem.Enabled = false;
             this.auditoríaToolStripMenuItem.Name = "auditoríaToolStripMenuItem";
             this.auditoríaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
@@ -306,7 +308,7 @@
             // 
             this.bitacoraToolStripMenuItem.Enabled = false;
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.bitacoraToolStripMenuItem.Tag = "21";
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
@@ -315,7 +317,7 @@
             // 
             this.controlDeCambiosToolStripMenuItem.Enabled = false;
             this.controlDeCambiosToolStripMenuItem.Name = "controlDeCambiosToolStripMenuItem";
-            this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.controlDeCambiosToolStripMenuItem.Tag = "22";
             this.controlDeCambiosToolStripMenuItem.Text = "Control de Cambios";
             this.controlDeCambiosToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambiosToolStripMenuItem_Click);
@@ -324,9 +326,19 @@
             // 
             this.backupYRestoreToolStripMenuItem.Enabled = false;
             this.backupYRestoreToolStripMenuItem.Name = "backupYRestoreToolStripMenuItem";
-            this.backupYRestoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backupYRestoreToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.backupYRestoreToolStripMenuItem.Tag = "23";
             this.backupYRestoreToolStripMenuItem.Text = "Backup y Restore";
+            this.backupYRestoreToolStripMenuItem.Click += new System.EventHandler(this.backupYRestoreToolStripMenuItem_Click);
+            // 
+            // digitosVerificadoresToolStripMenuItem
+            // 
+            this.digitosVerificadoresToolStripMenuItem.Enabled = false;
+            this.digitosVerificadoresToolStripMenuItem.Name = "digitosVerificadoresToolStripMenuItem";
+            this.digitosVerificadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.digitosVerificadoresToolStripMenuItem.Tag = "24";
+            this.digitosVerificadoresToolStripMenuItem.Text = "Digitos Verificadores";
+            this.digitosVerificadoresToolStripMenuItem.Click += new System.EventHandler(this.digitosVerificadoresToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -375,6 +387,7 @@
         private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlDeCambiosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupYRestoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem digitosVerificadoresToolStripMenuItem;
     }
 }
 

@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDAL.cs" />
+    <Compile Include="BackupRestore.cs" />
+    <Compile Include="DigitosVerificador\Comando.cs" />
+    <Compile Include="DigitosVerificador\DigitosVerificadores.cs" />
     <Compile Include="Encriptador.cs" />
     <Compile Include="EstadoSolicitud.cs" />
     <Compile Include="EventoBitacora.cs" />

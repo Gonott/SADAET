@@ -237,5 +237,19 @@ namespace GUI
             formControlCambios.MdiParent = this;
             formControlCambios.Show();
         }
+
+        private void backupYRestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBackupRestore formBackup = new FormBackupRestore();
+            formBackup.MdiParent = this;
+            formBackup.Show();
+        }
+
+        private void digitosVerificadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDigitosVerificadores formDV = new FormDigitosVerificadores();
+            formDV.MdiParent = this;
+            formDV.Show();
+        }
     }
 }
