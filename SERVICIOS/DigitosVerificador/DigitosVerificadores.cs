@@ -46,7 +46,7 @@ namespace SERVICIOS.DigitosVerificador
                     Comando.ActualizarBD(Consulta, Tabla);  
                 }
 
-                DataTable TodasLasTablas = Comando.ObjDataTable("select name from sys.tables");  
+                DataTable TodasLasTablas = Comando.ObjDataTable("select name from sys.tables where name = 'Solicitud'");  //where agregado para probar con tabla Solicitud primero.
 
                 String CadenaDVH = "";
                 for (int r = 0; r < TodasLasTablas.Rows.Count; r++)  
@@ -101,7 +101,7 @@ namespace SERVICIOS.DigitosVerificador
                                 CadenaDeDVH += CreateHash(CadenaConcatenada); 
                                 if (!Tabla.Rows[row]["DVH"].ToString().Equals(CreateHash(CadenaConcatenada).ToString())) 
                                 {  //putea.
-                                    RegMod += "Error de integridad en la tabla " + DTAllTables.Rows[a].ItemArray[0].ToString() + " en el registro " + Tabla.Rows[row].ItemArray[0] + "<br/>";
+                                    RegMod += "Error de integridad en la tabla " + DTAllTables.Rows[a].ItemArray[0].ToString() + " en el registro " + Tabla.Rows[row].ItemArray[0];
                                     Retorno = false;
                                     Digito = false;
                                 }

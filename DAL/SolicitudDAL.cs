@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using BE;
 using SERVICIOS;
-
+using SERVICIOS.DigitosVerificador;
 namespace DAL
 {
     public class SolicitudDAL
@@ -110,10 +110,12 @@ namespace DAL
             }
             finally
             {
+
                 if (cn != null && cn.State == ConnectionState.Open)
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
             
 
@@ -144,6 +146,7 @@ namespace DAL
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
 
 
@@ -202,8 +205,10 @@ namespace DAL
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
         }
+
 
         public void Alta(Solicitud nueva)
         {
@@ -233,6 +238,7 @@ namespace DAL
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
 
         }

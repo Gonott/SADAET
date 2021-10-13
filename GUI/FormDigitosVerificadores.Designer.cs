@@ -36,7 +36,7 @@ namespace GUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(213, 74);
+            this.button1.Location = new System.Drawing.Point(243, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(322, 23);
             this.button1.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace GUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(213, 122);
+            this.button2.Location = new System.Drawing.Point(243, 83);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(322, 23);
             this.button2.TabIndex = 1;
@@ -56,17 +56,17 @@ namespace GUI
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 200);
+            this.textBox1.Location = new System.Drawing.Point(12, 112);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(423, 163);
+            this.textBox1.Size = new System.Drawing.Size(776, 180);
             this.textBox1.TabIndex = 2;
             // 
             // FormDigitosVerificadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 302);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
