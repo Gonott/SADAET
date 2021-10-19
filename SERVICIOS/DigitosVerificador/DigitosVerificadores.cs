@@ -69,6 +69,7 @@ namespace SERVICIOS.DigitosVerificador
             }
             catch
             {
+                throw;
             }
         }
 
@@ -100,7 +101,7 @@ namespace SERVICIOS.DigitosVerificador
                                 }
                                 CadenaDeDVH += CreateHash(CadenaConcatenada); 
                                 if (!Tabla.Rows[row]["DVH"].ToString().Equals(CreateHash(CadenaConcatenada).ToString())) 
-                                {  //putea.
+                                {  
                                     RegMod += "Error de integridad en la tabla " + DTAllTables.Rows[a].ItemArray[0].ToString() + " en el registro " + Tabla.Rows[row].ItemArray[0];
                                     Retorno = false;
                                     Digito = false;
