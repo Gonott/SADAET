@@ -12,7 +12,7 @@ using SERVICIOS;
 
 namespace DAL   
 {
-   public class UsuarioDAL
+    public class UsuarioDAL
     {
 
         SqlConnection cnx = AccesoDAL.ObtInstancia.ObtenerConexionSql();
@@ -32,13 +32,13 @@ namespace DAL
                 if (objetoDB != null)
                 {
                     count = int.Parse(objetoDB.ToString());
-                    
+
                 }
                 else
                 {
                     count = 0;
                 }
-                
+
                 Sesion.ObtenerInstancia.EsteUsuario.IdUsuario = count;
                 cnx.Close();
                 return count;
@@ -58,7 +58,7 @@ namespace DAL
 
         }
 
-        
+
 
 
         public List<Usuario> VerUsuarios()
@@ -97,6 +97,106 @@ namespace DAL
             }
 
         }
+
+
+        #region ABM Usuarios
+
+
+        public void Alta(Usuario usr)
+        {
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "AltaUsuario";
+                cmd.Parameters.AddWithValue("@nombre", usr.NombreUsuario);
+                cmd.Parameters.AddWithValue("@pwd",  usr.Contraseña);  //llamar al critografo desde UI.
+                cmd.Connection = cnx;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cnx != null && cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+
+
+        }
+
+
+        public void Baja(Usuario usr)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "BajaUsuario";
+                cmd.Parameters.AddWithValue("@id", usr.IdUsuario);
+                cmd.Connection = cnx;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cnx != null && cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+        }
+
+
+
+        public void Modificar(Usuario usr)
+        {
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "ModificarUsuario";
+                cmd.Parameters.AddWithValue("@id", usr.IdUsuario);
+                cmd.Parameters.AddWithValue("@nombre", usr.NombreUsuario);
+                cmd.Parameters.AddWithValue("@pwd", usr.Contraseña);  //llamar al critografo desde UI.
+                cmd.Connection = cnx;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (cnx != null && cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+            }
+
+        }
+
+        #endregion
 
 
     }
