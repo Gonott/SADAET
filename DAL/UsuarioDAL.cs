@@ -175,7 +175,7 @@ namespace DAL
                 cmd.CommandText = "ModificarUsuario";
                 cmd.Parameters.AddWithValue("@id", usr.IdUsuario);
                 cmd.Parameters.AddWithValue("@nombre", usr.NombreUsuario);
-                cmd.Parameters.AddWithValue("@pwd", usr.Contraseña);  //llamar al critografo desde UI.
+                cmd.Parameters.AddWithValue("@pwd", usr.Contraseña);  
                 cmd.Connection = cnx;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();

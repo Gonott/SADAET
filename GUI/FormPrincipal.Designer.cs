@@ -48,6 +48,7 @@
             this.administrarPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarAutorizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBMAutorizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBMUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarIdiomaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarIdiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -227,7 +228,8 @@
             this.perfilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrarPerfilesToolStripMenuItem,
             this.administrarAutorizacionesToolStripMenuItem,
-            this.aBMAutorizacionesToolStripMenuItem});
+            this.aBMAutorizacionesToolStripMenuItem,
+            this.aBMUsuariosToolStripMenuItem});
             this.perfilesToolStripMenuItem.Enabled = false;
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
             this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
@@ -260,6 +262,15 @@
             this.aBMAutorizacionesToolStripMenuItem.Tag = "16";
             this.aBMAutorizacionesToolStripMenuItem.Text = "ABM Autorizaciones";
             this.aBMAutorizacionesToolStripMenuItem.Click += new System.EventHandler(this.aBMAutorizacionesToolStripMenuItem_Click);
+            // 
+            // aBMUsuariosToolStripMenuItem
+            // 
+            this.aBMUsuariosToolStripMenuItem.Enabled = false;
+            this.aBMUsuariosToolStripMenuItem.Name = "aBMUsuariosToolStripMenuItem";
+            this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.aBMUsuariosToolStripMenuItem.Tag = "25";
+            this.aBMUsuariosToolStripMenuItem.Text = "ABM Usuarios";
+            this.aBMUsuariosToolStripMenuItem.Click += new System.EventHandler(this.aBMUsuariosToolStripMenuItem_Click);
             // 
             // idiomasToolStripMenuItem
             // 
@@ -388,6 +399,7 @@
         private System.Windows.Forms.ToolStripMenuItem controlDeCambiosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupYRestoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem digitosVerificadoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aBMUsuariosToolStripMenuItem;
     }
 }
 

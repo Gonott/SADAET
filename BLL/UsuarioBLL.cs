@@ -134,5 +134,52 @@ namespace BLL
 
         }
 
+
+        #region ABM 
+
+        public void Alta(Usuario usr)
+        {
+            try
+            {
+                mapper.Alta(usr);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void Baja(Usuario usr)
+        {
+            try
+            {
+                mapper.Baja(usr);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        public void Modificar(Usuario usr)
+        {
+            try
+            {
+                mapper.Modificar(usr);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+        #endregion
+
+
     }
 }

@@ -82,6 +82,12 @@
     <Compile Include="Elegir Idioma.Designer.cs">
       <DependentUpon>Elegir Idioma.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form ABM Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form ABM Usuarios.Designer.cs">
+      <DependentUpon>Form ABM Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="ComponentesAdecuados.rdlc" />
     <EmbeddedResource Include="Elegir Idioma.resx">
       <DependentUpon>Elegir Idioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form ABM Usuarios.resx">
+      <DependentUpon>Form ABM Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.cs</DependentUpon>

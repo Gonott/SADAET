@@ -251,5 +251,12 @@ namespace GUI
             formDV.MdiParent = this;
             formDV.Show();
         }
+
+        private void aBMUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_ABM_Usuarios formUsuarios = new Form_ABM_Usuarios();
+            formUsuarios.MdiParent = this;
+            formUsuarios.Show();
+        }
     }
 }
