@@ -268,7 +268,7 @@
             this.aBMUsuariosToolStripMenuItem.Enabled = false;
             this.aBMUsuariosToolStripMenuItem.Name = "aBMUsuariosToolStripMenuItem";
             this.aBMUsuariosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.aBMUsuariosToolStripMenuItem.Tag = "25";
+            this.aBMUsuariosToolStripMenuItem.Tag = "46";
             this.aBMUsuariosToolStripMenuItem.Text = "ABM Usuarios";
             this.aBMUsuariosToolStripMenuItem.Click += new System.EventHandler(this.aBMUsuariosToolStripMenuItem_Click);
             // 
@@ -288,7 +288,7 @@
             // 
             this.cambiarIdiomaToolStripMenuItem.Enabled = false;
             this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cambiarIdiomaToolStripMenuItem.Tag = "18";
             this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
@@ -297,7 +297,7 @@
             // 
             this.agregarIdiomasToolStripMenuItem.Enabled = false;
             this.agregarIdiomasToolStripMenuItem.Name = "agregarIdiomasToolStripMenuItem";
-            this.agregarIdiomasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.agregarIdiomasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarIdiomasToolStripMenuItem.Tag = "19";
             this.agregarIdiomasToolStripMenuItem.Text = "Agregar Idiomas";
             this.agregarIdiomasToolStripMenuItem.Click += new System.EventHandler(this.agregarIdiomasToolStripMenuItem_Click);
@@ -312,7 +312,7 @@
             this.auditoríaToolStripMenuItem.Enabled = false;
             this.auditoríaToolStripMenuItem.Name = "auditoríaToolStripMenuItem";
             this.auditoríaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.auditoríaToolStripMenuItem.Tag = "20";
+            this.auditoríaToolStripMenuItem.Tag = "47";
             this.auditoríaToolStripMenuItem.Text = "Auditoría";
             // 
             // bitacoraToolStripMenuItem
@@ -320,7 +320,7 @@
             this.bitacoraToolStripMenuItem.Enabled = false;
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
             this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.bitacoraToolStripMenuItem.Tag = "21";
+            this.bitacoraToolStripMenuItem.Tag = "48";
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
@@ -329,7 +329,7 @@
             this.controlDeCambiosToolStripMenuItem.Enabled = false;
             this.controlDeCambiosToolStripMenuItem.Name = "controlDeCambiosToolStripMenuItem";
             this.controlDeCambiosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.controlDeCambiosToolStripMenuItem.Tag = "22";
+            this.controlDeCambiosToolStripMenuItem.Tag = "49";
             this.controlDeCambiosToolStripMenuItem.Text = "Control de Cambios";
             this.controlDeCambiosToolStripMenuItem.Click += new System.EventHandler(this.controlDeCambiosToolStripMenuItem_Click);
             // 
@@ -338,7 +338,7 @@
             this.backupYRestoreToolStripMenuItem.Enabled = false;
             this.backupYRestoreToolStripMenuItem.Name = "backupYRestoreToolStripMenuItem";
             this.backupYRestoreToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.backupYRestoreToolStripMenuItem.Tag = "23";
+            this.backupYRestoreToolStripMenuItem.Tag = "50";
             this.backupYRestoreToolStripMenuItem.Text = "Backup y Restore";
             this.backupYRestoreToolStripMenuItem.Click += new System.EventHandler(this.backupYRestoreToolStripMenuItem_Click);
             // 
@@ -347,7 +347,7 @@
             this.digitosVerificadoresToolStripMenuItem.Enabled = false;
             this.digitosVerificadoresToolStripMenuItem.Name = "digitosVerificadoresToolStripMenuItem";
             this.digitosVerificadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.digitosVerificadoresToolStripMenuItem.Tag = "24";
+            this.digitosVerificadoresToolStripMenuItem.Tag = "51";
             this.digitosVerificadoresToolStripMenuItem.Text = "Digitos Verificadores";
             this.digitosVerificadoresToolStripMenuItem.Click += new System.EventHandler(this.digitosVerificadoresToolStripMenuItem_Click);
             // 
