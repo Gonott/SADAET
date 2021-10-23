@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DAL;
 using SERVICIOS.ObserverIdioma;
+using SERVICIOS;
 
 namespace BLL
 {
@@ -56,7 +57,7 @@ namespace BLL
         {
             try
             {
-                GestorBitacoraBLL.ObtenerInstancia.Grabar("Alta de Idioma", "Se ingresó al sistema un nuevo idioma : " + nombre);
+                GestorBitacora.ObtenerInstancia.Grabar("Alta de Idioma", "Se ingresó al sistema un nuevo idioma : " + nombre);
                 return mapper.AltaIdioma(nombre);
                 
             }

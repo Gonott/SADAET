@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
-using SERVICIOS;
 using BE;
+using SERVICIOS.ServiciosDAL;
 
-namespace BLL
+namespace SERVICIOS
 {
-    public class GestorCambiosEstadoBLL
+    public class GestorCambiosEstado
     {
 
         GestorCambiosEstadoDAL mapper = new GestorCambiosEstadoDAL();

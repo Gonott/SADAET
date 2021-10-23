@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using DAL;
+using SERVICIOS;
 
 namespace BLL
 {
@@ -61,7 +62,7 @@ namespace BLL
             Adecuados.Add(RamAdecuada);
             Adecuados.Add(ProcesadorAdecuado);
 
-            GestorBitacoraBLL.ObtenerInstancia.Grabar("Busqueda de componentes", "Se buscaron componentes adecuados para "+ emp.Nombre);
+            GestorBitacora.ObtenerInstancia.Grabar("Busqueda de componentes", "Se buscaron componentes adecuados para "+ emp.Nombre);
             return Adecuados;
 
         }

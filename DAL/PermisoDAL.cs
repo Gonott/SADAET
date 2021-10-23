@@ -9,6 +9,7 @@ using System.Data.Sql;
 using BE;
 using SERVICIOS.PerfilesComposite;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
 namespace DAL
 {

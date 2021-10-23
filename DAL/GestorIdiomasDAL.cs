@@ -9,6 +9,7 @@ using BE;
 using SERVICIOS.ObserverIdioma;
 using System.Data;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
 namespace DAL
 {

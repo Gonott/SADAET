@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using SERVICIOS;
 
 namespace GUI
 {
@@ -15,7 +16,7 @@ namespace GUI
     {
 
         string fileName = null;
-        BackupRestoreBLL gestorBackupRestore = new BackupRestoreBLL();
+        BackupRestore gestorBackupRestore = new BackupRestore();
 
 
         public FormBackupRestore()
@@ -53,7 +54,7 @@ namespace GUI
                 {
                     try
                     {
-                        gestorBackupRestore.Restaurar(openFileDialog1.FileName);
+                        gestorBackupRestore.Restore(openFileDialog1.FileName);
                         MessageBox.Show("**Restore exitoso**");
 
                     }

@@ -42,11 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackupRestoreDAL.cs" />
     <Compile Include="ComponenteDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
-    <Compile Include="GestorCambiosEstadoDAL.cs" />
-    <Compile Include="GestorBitacoraDAL.cs" />
     <Compile Include="GestorIdiomasDAL.cs" />
     <Compile Include="PerifericoDAL.cs" />
     <Compile Include="PermisoDAL.cs" />

@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using SERVICIOS;
 
 
 
-namespace SERVICIOS.DigitosVerificador
+namespace SERVICIOS.ServiciosDAL
 {
     public class Comando
     {

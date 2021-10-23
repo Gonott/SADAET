@@ -8,6 +8,9 @@ using System.Data.SqlClient;
 using BE;
 using SERVICIOS;
 using SERVICIOS.DigitosVerificador;
+using SERVICIOS.ServiciosDAL;
+
+
 namespace DAL
 {
     public class SolicitudDAL

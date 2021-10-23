@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Security.Cryptography;
+using SERVICIOS.ServiciosDAL;
+
 
 
 
@@ -12,7 +14,6 @@ namespace SERVICIOS.DigitosVerificador
 {
     public class DigitosVerificadores
     {
-
         private static bool Digito = true; 
         private static String RegMod = ""; 
         public static String CreateHash(String CadenaParametro)

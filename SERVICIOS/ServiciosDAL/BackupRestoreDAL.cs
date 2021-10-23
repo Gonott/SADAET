@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
 
-namespace DAL
+namespace SERVICIOS.ServiciosDAL
 {
     public class BackupRestoreDAL
     {

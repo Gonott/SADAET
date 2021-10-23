@@ -41,13 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDAL.cs" />
     <Compile Include="BackupRestore.cs" />
-    <Compile Include="DigitosVerificador\Comando.cs" />
-    <Compile Include="DigitosVerificador\DigitosVerificadores.cs" />
+    <Compile Include="ServiciosDAL\BackupRestoreDAL.cs" />
+    <Compile Include="ServiciosDAL\Comando.cs" />
+    <Compile Include="DigitosVerificadores.cs" />
     <Compile Include="Encriptador.cs" />
     <Compile Include="EstadoSolicitud.cs" />
     <Compile Include="EventoBitacora.cs" />
+    <Compile Include="GestorBitacora.cs" />
+    <Compile Include="GestorCambiosEstado.cs" />
     <Compile Include="ObserverIdioma\Idioma.cs" />
     <Compile Include="ObserverIdioma\IIdiomaObserver.cs" />
     <Compile Include="ObserverIdioma\ObjetoAuxiliarIdioma.cs" />
@@ -55,6 +57,9 @@
     <Compile Include="PerfilesComposite\Permiso.cs" />
     <Compile Include="PerfilesComposite\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiciosDAL\AccesoDAL.cs" />
+    <Compile Include="ServiciosDAL\GestorBitacoraDAL.cs" />
+    <Compile Include="ServiciosDAL\GestorCambiosEstadoDAL.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="ObserverIdioma\Subject.cs" />
     <Compile Include="Usuario.cs" />
@@ -64,6 +69,9 @@
       <Project>{f52e9393-c84e-4002-b055-127f07d4afbd}</Project>
       <Name>BE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

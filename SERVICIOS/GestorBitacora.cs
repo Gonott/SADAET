@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
-using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
-namespace BLL
+namespace SERVICIOS
 {
-    public sealed class GestorBitacoraBLL 
+    public sealed class GestorBitacora
     {
 
         #region singleton 
 
-        private GestorBitacoraBLL() { }
+        private GestorBitacora() { }
 
-        private static GestorBitacoraBLL instancia = null;
-        public static GestorBitacoraBLL ObtenerInstancia
+        private static GestorBitacora instancia = null;
+        public static GestorBitacora ObtenerInstancia
         {
             get
             {
                 if (instancia == null)
                 {
-                    instancia = new GestorBitacoraBLL();
+                    instancia = new GestorBitacora();
                 }
                 return instancia;
 

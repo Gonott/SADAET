@@ -5,19 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using DAL;
+using SERVICIOS;
 
 namespace BLL
 {
     public class SolicitudBLL
     {
 		SolicitudDAL mapper = new SolicitudDAL();
-		GestorCambiosEstadoBLL cambiosEstadoBLL = new GestorCambiosEstadoBLL();
+		GestorCambiosEstado cambiosEstadoBLL = new GestorCambiosEstado();
 	
 		public List<Solicitud> ListarSolicitudes()
         {
             try
             {
-				GestorBitacoraBLL.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron todas las solicitudes");
+				GestorBitacora.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron todas las solicitudes");
 				return mapper.ListarSolicitudes();
             }
             catch (Exception)
@@ -42,7 +43,7 @@ namespace BLL
 						Filtradas.Add(item);
 					}
 				}
-				GestorBitacoraBLL.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron las solicitudes con estado " + estado);
+				GestorBitacora.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron las solicitudes con estado " + estado);
 				return Filtradas;
 			}
 			catch (Exception)
@@ -59,7 +60,7 @@ namespace BLL
 			{
 				mapper.AsignarEquipo(equipo, solicitud);
 				cambiosEstadoBLL.GrabarEstadoSolicitud(solicitud);
-				GestorBitacoraBLL.ObtenerInstancia.Grabar("Asignación de Equipo", "Se asignó el equipo: " + equipo.CodInventario + " a la solicitud " + solicitud.CodPedido);
+				GestorBitacora.ObtenerInstancia.Grabar("Asignación de Equipo", "Se asignó el equipo: " + equipo.CodInventario + " a la solicitud " + solicitud.CodPedido);
 			}
 			catch (Exception)
 			{
@@ -76,7 +77,7 @@ namespace BLL
 			{
 				mapper.ModificarEstado(unaSolicitud, nuevoEstado);
 				cambiosEstadoBLL.GrabarEstadoSolicitud(unaSolicitud);
-				GestorBitacoraBLL.ObtenerInstancia.Grabar("Cambio de Estado", "Cambió el estado de la solicitud " + unaSolicitud.CodPedido + " a " + nuevoEstado);
+				GestorBitacora.ObtenerInstancia.Grabar("Cambio de Estado", "Cambió el estado de la solicitud " + unaSolicitud.CodPedido + " a " + nuevoEstado);
 			}
 			catch (Exception)
 			{
@@ -94,7 +95,7 @@ namespace BLL
 				nuevaSolicitud.estado = Estado.Asignación;
 				nuevaSolicitud.Fecha = DateTime.Now;
 				mapper.Alta(nuevaSolicitud);
-				GestorBitacoraBLL.ObtenerInstancia.Grabar("Ingreso de Solicitud", "Se ingresó al sistema la solicitud para " + nuevaSolicitud.empleado.Nombre);
+				GestorBitacora.ObtenerInstancia.Grabar("Ingreso de Solicitud", "Se ingresó al sistema la solicitud para " + nuevaSolicitud.empleado.Nombre);
 			}
 			catch (Exception)
 			{

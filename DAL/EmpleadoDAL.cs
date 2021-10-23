@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using BE;
 using System.Security.Cryptography.X509Certificates;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
 namespace DAL
 {

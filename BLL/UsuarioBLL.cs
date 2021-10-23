@@ -38,7 +38,7 @@ namespace BLL
             Sesion.ObtenerInstancia.EsteUsuario.Logueado = true;
             //Ahora se procede a cargar el perfil.
             CargarPerfil(Sesion.ObtenerInstancia.EsteUsuario);
-            GestorBitacoraBLL.ObtenerInstancia.Grabar("Sesion Iniciada", "El usuario ha iniciado sesión");
+            GestorBitacora.ObtenerInstancia.Grabar("Sesion Iniciada", "El usuario ha iniciado sesión");
 
         }
 
@@ -127,7 +127,7 @@ namespace BLL
         public void CerrarSesion()
         {
 
-            GestorBitacoraBLL.ObtenerInstancia.Grabar("Sesion Cerrada", "El usuario ha cerrado sesión");
+            GestorBitacora.ObtenerInstancia.Grabar("Sesion Cerrada", "El usuario ha cerrado sesión");
             Sesion.ObtenerInstancia.CerrarSesion();
                        
             GC.Collect();

@@ -39,7 +39,7 @@ namespace BLL
 						{
 							mapper.AsociarPerifericos(unasolicitud, item);
 						}
-						GestorBitacoraBLL.ObtenerInstancia.Grabar("Asignación de perifericos", "Se asignaron periféricos a la solicitud " + unasolicitud.CodPedido );
+						GestorBitacora.ObtenerInstancia.Grabar("Asignación de perifericos", "Se asignaron periféricos a la solicitud " + unasolicitud.CodPedido );
 					}
 				}
 
@@ -82,7 +82,7 @@ namespace BLL
 				}
 
 			}
-			GestorBitacoraBLL.ObtenerInstancia.Grabar("Busqueda de periféricos", "Se buscaron perifericos");
+			GestorBitacora.ObtenerInstancia.Grabar("Busqueda de periféricos", "Se buscaron perifericos");
 			return perifericosPC;
 		}
 

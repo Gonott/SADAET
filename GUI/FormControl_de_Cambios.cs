@@ -21,7 +21,7 @@ namespace GUI
         List<EstadoSolicitud> estados = new List<EstadoSolicitud>();
 
 
-        GestorCambiosEstadoBLL gestorbll = new GestorCambiosEstadoBLL();
+        GestorCambiosEstado gestorbll = new GestorCambiosEstado();
         EstadoSolicitud estadoTemporal = new EstadoSolicitud();
 
 

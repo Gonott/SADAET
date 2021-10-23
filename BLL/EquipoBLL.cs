@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using DAL;
+using SERVICIOS;
 
 namespace BLL
 {
@@ -75,7 +76,7 @@ namespace BLL
                 }
 
             }
-            GestorBitacoraBLL.ObtenerInstancia.Grabar("Busqueda de Equipo Adecuado", "Se realizó la busqueda de un equipo adecuado empleado: " + empleado.Nombre );
+            GestorBitacora.ObtenerInstancia.Grabar("Busqueda de Equipo Adecuado", "Se realizó la busqueda de un equipo adecuado empleado: " + empleado.Nombre );
             return MejorEquipo;
         
 

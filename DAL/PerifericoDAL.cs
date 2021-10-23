@@ -8,6 +8,7 @@ using System.Data;
 using BE;
 using SERVICIOS;
 using System.ComponentModel;
+using SERVICIOS.ServiciosDAL;
 
 namespace DAL
 {

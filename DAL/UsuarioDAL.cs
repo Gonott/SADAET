@@ -7,6 +7,7 @@ using BE;
 using System.Data;
 using System.Data.SqlClient;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 
 
 

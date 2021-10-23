@@ -8,7 +8,8 @@ using System.Data.SqlClient;
 using BE;
 
 
-namespace SERVICIOS
+namespace SERVICIOS.ServiciosDAL
+
 {
     public  class AccesoDAL
     {

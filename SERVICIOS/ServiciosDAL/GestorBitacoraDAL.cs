@@ -7,10 +7,9 @@ using System.Data.Sql;
 using System.Data;
 using System.Data.SqlClient;
 using BE;
-using SERVICIOS;
 
 
-namespace DAL
+namespace SERVICIOS.ServiciosDAL
 {
     public class GestorBitacoraDAL
     {

@@ -16,13 +16,14 @@ namespace GUI
 {
     public partial class Form_Bitácora : Form, IIdiomaObserver
     {
-
-        List<EventoBitacora> eventos = GestorBitacoraBLL.ObtenerInstancia.LeerBitacora();
+        
+        List<EventoBitacora> eventos = GestorBitacora.ObtenerInstancia.LeerBitacora();
         List<EventoBitacora> eventosFiltrados;
-
+        
         public Form_Bitácora()
         {
             InitializeComponent();
+            
         }
 
         public void Update(Idioma idioma)
@@ -79,44 +80,44 @@ namespace GUI
 
             if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == true)          
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
             else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == false)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventosFiltrados, (Usuario)comboBox1.SelectedItem);
                 CargarEventos(eventosFiltrados);
 
             }
             else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == true)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
             else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == true)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventosFiltrados, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
             else if (checkBoxfecha.Checked == true & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == false)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, dateTimePicker1.Value, dateTimePicker2.Value);
                 CargarEventos(eventosFiltrados);
 
             }
             else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == true & checkBoxActividad.Checked == false)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, (Usuario)comboBox1.SelectedItem);
                 CargarEventos(eventosFiltrados);
             }
             else if (checkBoxfecha.Checked == false & checkBoxUsuario.Checked == false & checkBoxActividad.Checked == true)
             {
-                eventosFiltrados = GestorBitacoraBLL.ObtenerInstancia.Filtrar(eventos, textBox2.Text);
+                eventosFiltrados = GestorBitacora.ObtenerInstancia.Filtrar(eventos, textBox2.Text);
                 CargarEventos(eventosFiltrados);
             }
             else

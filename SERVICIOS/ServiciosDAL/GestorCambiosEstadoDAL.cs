@@ -9,7 +9,7 @@ using SERVICIOS;
 using BE;
 
 
-namespace DAL
+namespace SERVICIOS.ServiciosDAL
 {
     public class GestorCambiosEstadoDAL
     {
