@@ -68,9 +68,10 @@ namespace SERVICIOS.DigitosVerificador
                 Digito = true;
                 RegMod = "";
             }
-            catch
+            catch(Exception ex)
             {
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
@@ -121,9 +122,10 @@ namespace SERVICIOS.DigitosVerificador
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
             return Retorno;
         }
@@ -183,9 +185,10 @@ namespace SERVICIOS.DigitosVerificador
                 Digito = true;
                 RegMod = "";
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
             return retorno;
         }

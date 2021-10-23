@@ -20,8 +20,9 @@ namespace SERVICIOS
             {
                 mapper.GrabarEstado(solicitud);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
             
@@ -35,10 +36,10 @@ namespace SERVICIOS
             {
                 return mapper.ListarEstadosSolicitud(sol);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
             
         }
@@ -51,10 +52,10 @@ namespace SERVICIOS
             {
                 mapper.VoverEstadoSolicitud(estadoSolicitud);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
 
 
