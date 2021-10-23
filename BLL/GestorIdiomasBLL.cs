@@ -19,7 +19,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             } 
         }
@@ -32,7 +32,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
         
@@ -45,10 +45,10 @@ namespace BLL
             {
                 return mapper.ListarControles();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                 
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
 
         }
@@ -61,10 +61,10 @@ namespace BLL
                 return mapper.AltaIdioma(nombre);
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
@@ -78,10 +78,10 @@ namespace BLL
                     mapper.InsertarTraduccion(idIdioma, elemento); //insertar por medio de la dal.
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 

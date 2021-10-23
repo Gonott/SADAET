@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using SERVICIOS;
 
 
 
@@ -32,10 +33,10 @@ namespace BLL
 				}
 				return softUsuario;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
 			}
 
         }

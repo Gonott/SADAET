@@ -20,10 +20,10 @@ namespace BLL
 			{
 				return mapper.ListarPerifericos();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
         }
 
@@ -45,10 +45,10 @@ namespace BLL
 
 				
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 		}
 

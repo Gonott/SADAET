@@ -21,10 +21,10 @@ namespace BLL
 				GestorBitacora.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron todas las solicitudes");
 				return mapper.ListarSolicitudes();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
             }
         }
 
@@ -46,10 +46,10 @@ namespace BLL
 				GestorBitacora.ObtenerInstancia.Grabar("Listar solicitudes", "Se listaron las solicitudes con estado " + estado);
 				return Filtradas;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 
         }
@@ -62,10 +62,10 @@ namespace BLL
 				cambiosEstadoBLL.GrabarEstadoSolicitud(solicitud);
 				GestorBitacora.ObtenerInstancia.Grabar("Asignación de Equipo", "Se asignó el equipo: " + equipo.CodInventario + " a la solicitud " + solicitud.CodPedido);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 
 		}
@@ -79,10 +79,10 @@ namespace BLL
 				cambiosEstadoBLL.GrabarEstadoSolicitud(unaSolicitud);
 				GestorBitacora.ObtenerInstancia.Grabar("Cambio de Estado", "Cambió el estado de la solicitud " + unaSolicitud.CodPedido + " a " + nuevoEstado);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 
 
@@ -97,10 +97,10 @@ namespace BLL
 				mapper.Alta(nuevaSolicitud);
 				GestorBitacora.ObtenerInstancia.Grabar("Ingreso de Solicitud", "Se ingresó al sistema la solicitud para " + nuevaSolicitud.empleado.Nombre);
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 		}
 
@@ -123,10 +123,10 @@ namespace BLL
 				}
 				
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
 			}
 
 

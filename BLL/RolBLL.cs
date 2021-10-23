@@ -23,7 +23,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
                
@@ -39,7 +39,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
         }
@@ -54,7 +54,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
         }
@@ -69,7 +69,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
             
@@ -86,10 +86,10 @@ namespace BLL
                 mapper.AltaRol(r);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
 
             
@@ -103,10 +103,10 @@ namespace BLL
                 GestorBitacora.ObtenerInstancia.Grabar("Baja de Rol", "El usuario ha dado de baja el rol" + r.Nombre);
                 mapper.Baja(r);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
             
         }
@@ -118,10 +118,10 @@ namespace BLL
                 GestorBitacora.ObtenerInstancia.Grabar("Modificación de Rol", "El usuario ha modificado el rol" + r.Nombre);
                 mapper.Modificar(r);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
             
         }

@@ -61,7 +61,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
             
@@ -82,7 +82,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
            
@@ -106,7 +106,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
 
@@ -127,7 +127,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
 
@@ -147,7 +147,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
             
@@ -161,7 +161,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
             
@@ -177,7 +177,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
 
@@ -196,10 +196,10 @@ namespace BLL
                 GestorBitacora.ObtenerInstancia.Grabar("Alta de permiso", "Se dio de alta el permiso : " + p.Nombre);
                 mapper.AltaPermiso(p);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
            ;
         }
@@ -211,10 +211,10 @@ namespace BLL
                 mapper.BajaPermiso(p);
                 GestorBitacora.ObtenerInstancia.Grabar("Baja de permiso", "Se dio de baja el permiso : " + p.Nombre);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
@@ -226,10 +226,10 @@ namespace BLL
                 mapper.Modificar(p);
                 GestorBitacora.ObtenerInstancia.Grabar("Modificación de permiso", "Se modificó el permiso : " + p.Nombre);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 

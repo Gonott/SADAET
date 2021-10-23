@@ -98,7 +98,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw ex;
             }
 
@@ -111,10 +111,10 @@ namespace BLL
             {
                 return mapper.SeleccionarEquipo(codinv);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
         

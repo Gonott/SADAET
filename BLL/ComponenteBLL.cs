@@ -73,10 +73,11 @@ namespace BLL
             {
                 return mapper.ListarComponentes();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
+               
             }
 
         }

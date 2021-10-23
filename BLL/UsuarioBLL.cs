@@ -116,9 +116,10 @@ namespace BLL
             {
                 return mapper.VerUsuarios();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
 
         }
@@ -143,10 +144,10 @@ namespace BLL
             {
                 mapper.Alta(usr);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
@@ -156,10 +157,10 @@ namespace BLL
             {
                 mapper.Baja(usr);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
@@ -170,10 +171,10 @@ namespace BLL
             {
                 mapper.Modificar(usr);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw ex;
             }
         }
 
