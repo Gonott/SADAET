@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponenteBLL.cs" />
+    <Compile Include="DevolucionBLL.cs" />
     <Compile Include="EmpleadoBLL.cs" />
     <Compile Include="EquipoBLL.cs" />
     <Compile Include="PerifericoBLL.cs" />

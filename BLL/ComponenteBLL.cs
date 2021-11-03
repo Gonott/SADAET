@@ -75,7 +75,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
                 throw ex;
                
             }

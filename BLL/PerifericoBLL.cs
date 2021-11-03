@@ -14,7 +14,22 @@ namespace BLL
     {
 		PerifericoDAL mapper = new PerifericoDAL();
 
-        public List<Periferico> ListarPerifericosNoAsignados()
+
+		public List<Periferico> ListarPerifericosSolicitud(Solicitud sol)
+        {
+            try
+            {
+				return mapper.ListarPorSolicitud(sol);
+            }
+            catch (Exception ex)
+            {
+				GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+				throw ex;
+			}
+        }
+
+
+		public List<Periferico> ListarPerifericosNoAsignados()
         {
 			try
 			{

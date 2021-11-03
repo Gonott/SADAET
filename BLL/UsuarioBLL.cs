@@ -182,5 +182,27 @@ namespace BLL
         #endregion
 
 
+        public bool EncontrarRol(int idRol)
+        {
+            bool retorno = false;
+            foreach (Autorizacion autorizacion in Sesion.ObtenerInstancia.EsteUsuario.Autorizaciones)
+            {
+                if (autorizacion.GetType() == typeof(Rol))
+                {
+                    if (autorizacion.Id == idRol)
+                    {
+                        retorno = true;
+                    }
+                    else
+                    {
+                        retorno = false;
+                    }
+                }
+               
+            }
+            return retorno;
+        }
+
+
     }
 }
