@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponenteDAL.cs" />
+    <Compile Include="DevolucionDAL.cs" />
     <Compile Include="EmpleadoDAL.cs" />
     <Compile Include="GestorIdiomasDAL.cs" />
     <Compile Include="PerifericoDAL.cs" />

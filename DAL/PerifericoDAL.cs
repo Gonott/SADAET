@@ -18,6 +18,57 @@ namespace DAL
         SqlCommand cmd = new SqlCommand(); 
 
 
+        public List<Periferico> ListarPorSolicitud(Solicitud sol)
+        {
+            try
+            {
+                List<Periferico> perifericos = new List<Periferico>();
+                cmd.Connection = cn;
+                cmd.CommandText = "ListarPerifericosPorSolicitud";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@idSol", sol.CodPedido);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                SqlDataReader Lector = cmd.ExecuteReader();
+                while (Lector.Read())
+                {
+                    Periferico periferico = new Periferico();
+                    periferico.CodInventario = int.Parse(Lector["CodInventario"].ToString());
+                    periferico.Descripcion = Lector["Descripcion"].ToString();
+                    switch (Lector["Tipo"].ToString())
+                    {
+                        case "Teclado":
+                            periferico.Tipo = TipoPeriferico.Teclado;
+                            break;
+                        case "Mouse":
+                            periferico.Tipo = TipoPeriferico.Mouse;
+                            break;
+                        case "Monitor":
+                            periferico.Tipo = TipoPeriferico.Monitor;
+                            break;
+                    }
+                    switch (Lector["Condicion"].ToString())
+                    {
+                        case "BuenEstado":
+                            periferico.condicion = Condición.BuenEstado;
+                            break;
+                        case "Mouse":
+                            periferico.condicion = Condición.Dañado;
+                            break;
+                    }
+                    perifericos.Add(periferico);
+                }
+                cmd.Connection.Close();
+                return perifericos;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         public List<Periferico> ListarPerifericos()
         {
             try
@@ -44,6 +95,15 @@ namespace DAL
                             break;
                         case "Monitor":
                             periferico.Tipo = TipoPeriferico.Monitor;
+                            break;
+                    }
+                    switch (Lector["Condicion"].ToString())
+                    {
+                        case "BuenEstado":
+                            periferico.condicion = Condición.BuenEstado;
+                            break;
+                        case "Mouse":
+                            periferico.condicion = Condición.Dañado;
                             break;
                     }
                     perifericos.Add(periferico);
