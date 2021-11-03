@@ -42,7 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Componente.cs" />
+    <Compile Include="Condición.cs" />
     <Compile Include="Departamento.cs" />
+    <Compile Include="Devolución.cs" />
+    <Compile Include="Elemento.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Equipo.cs" />
     <Compile Include="Estado.cs" />

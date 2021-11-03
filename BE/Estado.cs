@@ -25,7 +25,9 @@ namespace BE
 
         CorreoInterno, //3
 
-        Entregado //4
+        Entregado,//4
+
+        Devolucion //5
 
 
 

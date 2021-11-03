@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Periferico
+    public class Periferico : Elemento
     {
 
-        public int CodInventario { get; set; }
-
-        public string Descripcion { get; set; }
+     
 
 
         public TipoPeriferico Tipo;

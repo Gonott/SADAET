@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Equipo: Elemento
+    public enum Condición
     {
-
-
-        public List<Componente> Componentes = new List<Componente>();
-
-
+        BuenEstado,
+        Dañado
 
     }
 }
