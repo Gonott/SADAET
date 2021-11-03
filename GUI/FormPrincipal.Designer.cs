@@ -133,6 +133,7 @@
             this.pedirRetiroDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.pedirRetiroDeEquipoToolStripMenuItem.Tag = "3";
             this.pedirRetiroDeEquipoToolStripMenuItem.Text = "Solicitar Retiro de Equipo";
+            this.pedirRetiroDeEquipoToolStripMenuItem.Click += new System.EventHandler(this.pedirRetiroDeEquipoToolStripMenuItem_Click);
             // 
             // gestiónDePedidosToolStripMenuItem
             // 
@@ -210,7 +211,7 @@
             // 
             this.ingresoEgresoDeEquipoToolStripMenuItem.Enabled = false;
             this.ingresoEgresoDeEquipoToolStripMenuItem.Name = "ingresoEgresoDeEquipoToolStripMenuItem";
-            this.ingresoEgresoDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.ingresoEgresoDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresoEgresoDeEquipoToolStripMenuItem.Tag = "11";
             this.ingresoEgresoDeEquipoToolStripMenuItem.Text = "Equipos Entregados";
             this.ingresoEgresoDeEquipoToolStripMenuItem.Click += new System.EventHandler(this.ingresoEgresoDeEquipoToolStripMenuItem_Click);
@@ -219,9 +220,10 @@
             // 
             this.ingresoEgresoDeComponentesToolStripMenuItem.Enabled = false;
             this.ingresoEgresoDeComponentesToolStripMenuItem.Name = "ingresoEgresoDeComponentesToolStripMenuItem";
-            this.ingresoEgresoDeComponentesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.ingresoEgresoDeComponentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresoEgresoDeComponentesToolStripMenuItem.Tag = "12";
             this.ingresoEgresoDeComponentesToolStripMenuItem.Text = "Equipos a Retirar";
+            this.ingresoEgresoDeComponentesToolStripMenuItem.Click += new System.EventHandler(this.ingresoEgresoDeComponentesToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
@@ -288,7 +290,7 @@
             // 
             this.cambiarIdiomaToolStripMenuItem.Enabled = false;
             this.cambiarIdiomaToolStripMenuItem.Name = "cambiarIdiomaToolStripMenuItem";
-            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cambiarIdiomaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.cambiarIdiomaToolStripMenuItem.Tag = "18";
             this.cambiarIdiomaToolStripMenuItem.Text = "Cambiar Idioma";
             this.cambiarIdiomaToolStripMenuItem.Click += new System.EventHandler(this.cambiarIdiomaToolStripMenuItem_Click);
@@ -297,7 +299,7 @@
             // 
             this.agregarIdiomasToolStripMenuItem.Enabled = false;
             this.agregarIdiomasToolStripMenuItem.Name = "agregarIdiomasToolStripMenuItem";
-            this.agregarIdiomasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.agregarIdiomasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.agregarIdiomasToolStripMenuItem.Tag = "19";
             this.agregarIdiomasToolStripMenuItem.Text = "Agregar Idiomas";
             this.agregarIdiomasToolStripMenuItem.Click += new System.EventHandler(this.agregarIdiomasToolStripMenuItem_Click);

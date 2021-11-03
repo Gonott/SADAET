@@ -258,5 +258,19 @@ namespace GUI
             formUsuarios.MdiParent = this;
             formUsuarios.Show();
         }
+
+        private void ingresoEgresoDeComponentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Devoluciones formDevos = new Form_Devoluciones();
+            formDevos.MdiParent = this;
+            formDevos.Show();
+        }
+
+        private void pedirRetiroDeEquipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_SolicitarDevolucion formdevs = new Form_SolicitarDevolucion();
+            formdevs.MdiParent = this;
+            formdevs.Show();
+        }
     }
 }

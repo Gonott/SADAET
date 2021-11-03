@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using BLL;
 using SERVICIOS;
 using System.Runtime.CompilerServices;
+using SERVICIOS.DigitosVerificador;
 
 namespace GUI
 {
@@ -20,6 +21,7 @@ namespace GUI
         public FormPrincipal FormParent;
 
         UsuarioBLL usubll = new UsuarioBLL();
+        DigitosVerificadores gestorDVs = new DigitosVerificadores();
 
         public Form_Login()
         {
@@ -44,13 +46,43 @@ namespace GUI
             usr.NombreUsuario = TxtUsuario.Text;
             usr.Contraseña = _criptografo.GetSHA256(TxtPassword.Text);
             Sesion.ObtenerInstancia.EsteUsuario = usr;
+            
 
             try
             {
                 if (usubll.ComprobarUsuario(Sesion.ObtenerInstancia.EsteUsuario) == true)
                 {
                     MessageBox.Show("¡Bienvenido!");
-                    ComprobarPermisos();
+
+                    
+                    if(DigitosVerificadores.ValidarBBDD()== true)
+                    {
+                        ComprobarPermisos();
+                    }
+                    else
+                    {
+                        if (!usubll.EncontrarRol(101))
+                        {
+                             MessageBox.Show("No te puedo dejar entrar al sistema", "Lo Siento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                       
+                        //aca ir a hacer el insert en la tabla aviso para rol Administrador.
+                    }
+
+                       //si es admin, dejar entrar al sistema pero ir a buscar la tabla Avisos a ver que onda. o buchonear.
+                    if(usubll.EncontrarRol(101)) //101 corresponde a ID de Administrador
+                    {
+                        //si hay avisos o registros corruptos, lanzar el mensaje.
+                        if (DigitosVerificadores.RegistrosCorruptos() != "")
+                        {
+                             MessageBox.Show("Hola Administrador, se ha corrompido la base de datos" + Environment.NewLine + DigitosVerificadores.RegistrosCorruptos(), "Debe Restaurar la Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                       
+                        ComprobarPermisos();
+                    }
+                    
+                    
+                 
                     FormParent.UsarioToolStripMenuItem.Enabled = true;
                     FormParent.LogInToolStripMenu.Enabled = false;
                     FormParent.salirDelSistemaToolStripMenuItem1.Enabled = true;

@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -154,6 +169,12 @@
     <Compile Include="Form_ComodatoLegal.Designer.cs">
       <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Devoluciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Devoluciones.Designer.cs">
+      <DependentUpon>Form_Devoluciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Entregas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +186,12 @@
     </Compile>
     <Compile Include="Form_MarcarConfigurado.Designer.cs">
       <DependentUpon>Form_MarcarConfigurado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SolicitarDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SolicitarDevolucion.Designer.cs">
+      <DependentUpon>Form_SolicitarDevolucion.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_SolicitudDeEquipo.cs">
       <SubType>Form</SubType>
@@ -221,15 +248,22 @@
     <EmbeddedResource Include="Form_ComodatoLegal.resx">
       <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Devoluciones.resx">
+      <DependentUpon>Form_Devoluciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Entregas.resx">
       <DependentUpon>Form_Entregas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_MarcarConfigurado.resx">
       <DependentUpon>Form_MarcarConfigurado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_SolicitarDevolucion.resx">
+      <DependentUpon>Form_SolicitarDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_SolicitudDeEquipo.resx">
       <DependentUpon>Form_SolicitudDeEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdenDeRetiro.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -243,6 +277,7 @@
     <EmbeddedResource Include="ReporteRemito.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BE.Componente.datasource" />
+    <None Include="Properties\DataSources\BE.Elemento.datasource" />
     <None Include="Properties\DataSources\BE.Equipo.datasource" />
     <None Include="Properties\DataSources\BE.Periferico.datasource" />
     <None Include="Properties\Settings.settings">
@@ -286,6 +321,18 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
