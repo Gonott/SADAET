@@ -33,7 +33,7 @@ namespace SERVICIOS.ServiciosDAL
         public SqlConnection ObtenerConexionSql()
         {
             SqlConnection cnx = new SqlConnection();
-            cnx.ConnectionString = "Data Source=ASUS-X55A\\SQLEXPRESS;Initial Catalog=SADAET;Integrated Security=True";
+            cnx.ConnectionString = "Data Source=(local);Initial Catalog=SADAET;Integrated Security=True";
             return cnx;
         }
 

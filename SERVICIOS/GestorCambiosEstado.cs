@@ -22,7 +22,7 @@ namespace SERVICIOS
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
                 throw;
             }
             
@@ -38,7 +38,7 @@ namespace SERVICIOS
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
                 throw ex;
             }
             
@@ -54,7 +54,7 @@ namespace SERVICIOS
             }
             catch (Exception ex)
             {
-                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", ex.Message);
                 throw ex;
             }
 
