@@ -57,6 +57,8 @@
             this.controlDeCambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupYRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.digitosVerificadoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.depositoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controlarDevoluciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,8 @@
             this.sectorInventarioToolStripMenuItem,
             this.perfilesToolStripMenuItem,
             this.idiomasToolStripMenuItem,
-            this.auditoríaToolStripMenuItem});
+            this.auditoríaToolStripMenuItem,
+            this.depositoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(937, 24);
@@ -84,7 +87,7 @@
             this.LogInToolStripMenu,
             this.salirDelSistemaToolStripMenuItem1});
             this.UsarioToolStripMenuItem.Name = "UsarioToolStripMenuItem";
-            this.UsarioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.UsarioToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.UsarioToolStripMenuItem.Tag = "0";
             this.UsarioToolStripMenuItem.Text = "Usuario";
             this.UsarioToolStripMenuItem.Click += new System.EventHandler(this.logInToolStripMenuItem_Click);
@@ -92,7 +95,7 @@
             // LogInToolStripMenu
             // 
             this.LogInToolStripMenu.Name = "LogInToolStripMenu";
-            this.LogInToolStripMenu.Size = new System.Drawing.Size(143, 22);
+            this.LogInToolStripMenu.Size = new System.Drawing.Size(180, 22);
             this.LogInToolStripMenu.Tag = "0";
             this.LogInToolStripMenu.Text = "Iniciar Sesion";
             this.LogInToolStripMenu.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
@@ -100,7 +103,7 @@
             // salirDelSistemaToolStripMenuItem1
             // 
             this.salirDelSistemaToolStripMenuItem1.Name = "salirDelSistemaToolStripMenuItem1";
-            this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.salirDelSistemaToolStripMenuItem1.Tag = "0";
             this.salirDelSistemaToolStripMenuItem1.Text = "Cerrar Sesion";
             this.salirDelSistemaToolStripMenuItem1.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem1_Click);
@@ -211,7 +214,7 @@
             // 
             this.ingresoEgresoDeEquipoToolStripMenuItem.Enabled = false;
             this.ingresoEgresoDeEquipoToolStripMenuItem.Name = "ingresoEgresoDeEquipoToolStripMenuItem";
-            this.ingresoEgresoDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresoEgresoDeEquipoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.ingresoEgresoDeEquipoToolStripMenuItem.Tag = "11";
             this.ingresoEgresoDeEquipoToolStripMenuItem.Text = "Equipos Entregados";
             this.ingresoEgresoDeEquipoToolStripMenuItem.Click += new System.EventHandler(this.ingresoEgresoDeEquipoToolStripMenuItem_Click);
@@ -220,7 +223,7 @@
             // 
             this.ingresoEgresoDeComponentesToolStripMenuItem.Enabled = false;
             this.ingresoEgresoDeComponentesToolStripMenuItem.Name = "ingresoEgresoDeComponentesToolStripMenuItem";
-            this.ingresoEgresoDeComponentesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresoEgresoDeComponentesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.ingresoEgresoDeComponentesToolStripMenuItem.Tag = "12";
             this.ingresoEgresoDeComponentesToolStripMenuItem.Text = "Equipos a Retirar";
             this.ingresoEgresoDeComponentesToolStripMenuItem.Click += new System.EventHandler(this.ingresoEgresoDeComponentesToolStripMenuItem_Click);
@@ -353,6 +356,25 @@
             this.digitosVerificadoresToolStripMenuItem.Text = "Digitos Verificadores";
             this.digitosVerificadoresToolStripMenuItem.Click += new System.EventHandler(this.digitosVerificadoresToolStripMenuItem_Click);
             // 
+            // depositoToolStripMenuItem
+            // 
+            this.depositoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.controlarDevoluciónToolStripMenuItem});
+            this.depositoToolStripMenuItem.Enabled = false;
+            this.depositoToolStripMenuItem.Name = "depositoToolStripMenuItem";
+            this.depositoToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
+            this.depositoToolStripMenuItem.Tag = "52";
+            this.depositoToolStripMenuItem.Text = "Deposito Informatico";
+            // 
+            // controlarDevoluciónToolStripMenuItem
+            // 
+            this.controlarDevoluciónToolStripMenuItem.Enabled = false;
+            this.controlarDevoluciónToolStripMenuItem.Name = "controlarDevoluciónToolStripMenuItem";
+            this.controlarDevoluciónToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.controlarDevoluciónToolStripMenuItem.Tag = "53";
+            this.controlarDevoluciónToolStripMenuItem.Text = "Controlar Devolución";
+            this.controlarDevoluciónToolStripMenuItem.Click += new System.EventHandler(this.controlarDevoluciónToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +424,8 @@
         private System.Windows.Forms.ToolStripMenuItem backupYRestoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem digitosVerificadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aBMUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem depositoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlarDevoluciónToolStripMenuItem;
     }
 }
 

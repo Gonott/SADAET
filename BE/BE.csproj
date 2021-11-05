@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aviso.cs" />
     <Compile Include="Componente.cs" />
     <Compile Include="Condición.cs" />
     <Compile Include="Departamento.cs" />
@@ -56,9 +57,6 @@
     <Compile Include="Solicitud.cs" />
     <Compile Include="TipoComponente.cs" />
     <Compile Include="TipoPeriferico.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

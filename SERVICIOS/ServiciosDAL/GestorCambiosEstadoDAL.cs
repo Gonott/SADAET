@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using SERVICIOS;
+using SERVICIOS.DigitosVerificador;
 using BE;
 
 
@@ -16,6 +17,7 @@ namespace SERVICIOS.ServiciosDAL
 
         SqlConnection cn = AccesoDAL.ObtInstancia.ObtenerConexionSql();
         SqlCommand cmd = new SqlCommand();
+
 
 
         public void GrabarEstado(Solicitud solicitud)
@@ -145,6 +147,7 @@ namespace SERVICIOS.ServiciosDAL
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
 
         }

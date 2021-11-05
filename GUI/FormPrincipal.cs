@@ -76,18 +76,28 @@ namespace GUI
 
         private void salirDelSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            foreach (ToolStripItem item in this.menuStrip1.Items  )
-            {
-                item.Enabled = false;
+            try
+            { 
+                foreach (ToolStripItem item in this.menuStrip1.Items  )
+                {
+                    item.Enabled = false;
+                }
+                foreach (Form form in this.MdiChildren)
+                {
+                    form.Close();
+                }
+                
+                this.UsarioToolStripMenuItem.Enabled = true;
+                this.LogInToolStripMenu.Enabled = true;
+                usuarioBLL.CerrarSesion();
+
             }
-            foreach (Form form in this.MdiChildren)
+            catch (Exception)
             {
-                form.Close();
+                MessageBox.Show("Ya has cerrado sesion");
+                
             }
-            
-            this.UsarioToolStripMenuItem.Enabled = true;
-            this.LogInToolStripMenu.Enabled = true;
-            usuarioBLL.CerrarSesion();
+           
 
 
         }
@@ -272,5 +282,24 @@ namespace GUI
             formdevs.MdiParent = this;
             formdevs.Show();
         }
+
+        private void controlarDevoluciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_ControlarDevolucion formControlar = new Form_ControlarDevolucion();
+            formControlar.MdiParent = this;
+            formControlar.Show();
+        }
+
+
+
+        public void LanzarAvisos(int idRol)
+        {
+            FormAvisos formAvisos = new FormAvisos(idRol);
+            formAvisos.MdiParent = this;
+            formAvisos.Show();
+
+        }
+
+
     }
 }

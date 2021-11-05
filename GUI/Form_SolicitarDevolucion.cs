@@ -50,7 +50,9 @@ namespace GUI
             
           devolucionActual =  devolucionBLL.CrearDevolución (textBoxMotivo.Text,solicitudTemporal);
             GenerarOrden(solicitudTemporal, devolucionActual);
+            solicitudBLL.CambiarEstado(solicitudTemporal, Estado.Devolucion);
             this.reportViewer1.RefreshReport();
+            ActualizarSolicitudes();
         }
 
         private void dataGridViewSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)

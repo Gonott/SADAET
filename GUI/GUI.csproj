@@ -109,6 +109,12 @@
     <Compile Include="Form Login.Designer.cs">
       <DependentUpon>Form Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAvisos.Designer.cs">
+      <DependentUpon>FormAvisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBackupRestore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,12 @@
     <Compile Include="Form_ComodatoLegal.Designer.cs">
       <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ControlarDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ControlarDevolucion.Designer.cs">
+      <DependentUpon>Form_ControlarDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Devoluciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +230,9 @@
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAvisos.resx">
+      <DependentUpon>FormAvisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBackupRestore.resx">
       <DependentUpon>FormBackupRestore.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ComodatoLegal.resx">
       <DependentUpon>Form_ComodatoLegal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ControlarDevolucion.resx">
+      <DependentUpon>Form_ControlarDevolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Devoluciones.resx">
       <DependentUpon>Form_Devoluciones.cs</DependentUpon>

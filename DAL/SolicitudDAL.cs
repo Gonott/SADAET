@@ -183,6 +183,7 @@ namespace DAL
                 {
                     cn.Close();
                 }
+                DigitosVerificadores.GrabarPorTabla("Select * from Solicitud");
             }
         }
 

@@ -26,6 +26,7 @@ namespace DAL
                 cmd.CommandText = "AltaDevolucion";
                 cmd.Parameters.AddWithValue("@motivo", dev.Motivo);
                 cmd.Parameters.AddWithValue("@codSol", sol.CodPedido);
+                cmd.Parameters.AddWithValue("@orden", dev.NroOrden);
                 cmd.Connection = cn;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -100,11 +101,12 @@ namespace DAL
                     Devolución dev = new Devolución();
                     dev.Codigo = int.Parse(Lector["Codigo"].ToString());
                     dev.Motivo = Lector["Motivo"].ToString();
+                    dev.solicitudAsociada = int.Parse(Lector["CodSolicitud"].ToString());
                     if (Lector["FechaDevolucion"].ToString() != "" )
                     {
                         dev.Fecha = DateTime.Parse(Lector["FechaDevolucion"].ToString());
                     }
-
+                    
                     
                     devs.Add(dev);
                 }

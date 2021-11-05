@@ -17,8 +17,10 @@ namespace BLL
         private List<Elemento> entregados = new List<Elemento>();
         public List<Elemento> Faltantes = new List<Elemento>();
         public List<Elemento> Dañados = new List<Elemento>();
+        private PerifericoBLL perifBLL = new PerifericoBLL();
+        private EquipoBLL equipoBLL = new EquipoBLL();
 
-        ControladorBLL(Devolución devolucionRecibida, Solicitud solicitudCorrespondiente)
+        public ControladorBLL(Devolución devolucionRecibida, Solicitud solicitudCorrespondiente)
         {
             devActual = devolucionRecibida;
             solicitudEntregados = solicitudCorrespondiente;
@@ -37,35 +39,51 @@ namespace BLL
 
             if (devActual.elementos.Count() == entregados.Count())
             {
-                foreach (Elemento elemRecibido in devActual.elementos)
+                foreach (Elemento elemEntregado in entregados)
                 {
-                    foreach (Elemento elemEnregado in entregados)
+                    foreach (Elemento elemRecibido in devActual.elementos)
                     {
-                        if (elemRecibido.CodInventario == elemEnregado.CodInventario)
+                        if (elemRecibido.CodInventario == elemEntregado.CodInventario)
                         {
                             resultado = true;
+                            break;
+
                         }
-                        if (elemRecibido.CodInventario != elemEnregado.CodInventario)
+                        if (elemRecibido.CodInventario != elemEntregado.CodInventario)
                         {
-                            resultado = false;
-                            Faltantes.Add(elemEnregado);
+                            resultado = false; 
                         }
 
+                    }
+                    if (resultado == false)
+                    {
+                        Faltantes.Add(elemEntregado);
                     }
 
                 }
             }
-            else if(devActual.elementos.Count() != entregados.Count())
+            else if (devActual.elementos.Count() < entregados.Count())
             {
-                foreach (Elemento recibido in devActual.elementos)
+                
+                foreach (Elemento entregado in entregados)
                 {
-                    foreach (Elemento entregado in entregados)
+                    bool está = false;
+                    foreach (Elemento recibido in devActual.elementos)
                     {
                         if (entregado.CodInventario != recibido.CodInventario)
                         {
-                            Faltantes.Add(entregado);
+                            
                             resultado = false;
                         }
+                        if(entregado.CodInventario == recibido.CodInventario)
+                        {
+                            está = true;
+                            break;
+                        }
+                    }
+                    if(está == false)
+                    {
+                        Faltantes.Add(entregado);
                     }
                 }
             }

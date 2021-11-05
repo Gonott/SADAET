@@ -46,7 +46,8 @@ namespace GUI
             usr.NombreUsuario = TxtUsuario.Text;
             usr.Contraseña = _criptografo.GetSHA256(TxtPassword.Text);
             Sesion.ObtenerInstancia.EsteUsuario = usr;
-            
+            AvisoBLL avisobll = new AvisoBLL();
+
 
             try
             {
@@ -54,8 +55,8 @@ namespace GUI
                 {
                     MessageBox.Show("¡Bienvenido!");
 
-                    
-                    if(DigitosVerificadores.ValidarBBDD()== true)
+
+                    if (DigitosVerificadores.ValidarBBDD() == true)
                     {
                         ComprobarPermisos();
                     }
@@ -63,31 +64,28 @@ namespace GUI
                     {
                         if (!usubll.EncontrarRol(101))
                         {
-                             MessageBox.Show("No te puedo dejar entrar al sistema", "Lo Siento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No te puedo dejar entrar al sistema", "Lo Siento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                       
-                        //aca ir a hacer el insert en la tabla aviso para rol Administrador.
+                        avisobll.CrearAviso(101, "DB Corrupta", DigitosVerificadores.RegistrosCorruptos());
                     }
 
-                       //si es admin, dejar entrar al sistema pero ir a buscar la tabla Avisos a ver que onda. o buchonear.
-                    if(usubll.EncontrarRol(101)) //101 corresponde a ID de Administrador
+                    //si es admin, dejar entrar al sistema pero ir a buscar la tabla Avisos a ver que onda. o buchonear.
+                    if (usubll.EncontrarRol(101)) //101 corresponde a ID de Administrador
                     {
-                        //si hay avisos o registros corruptos, lanzar el mensaje.
-                        if (DigitosVerificadores.RegistrosCorruptos() != "")
-                        {
-                             MessageBox.Show("Hola Administrador, se ha corrompido la base de datos" + Environment.NewLine + DigitosVerificadores.RegistrosCorruptos(), "Debe Restaurar la Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                       
                         ComprobarPermisos();
-                    }
-                    
-                    
-                 
+                        if (avisobll.VerMisAvisos(101).Count >= 1)
+                        {
+                            MessageBox.Show("La base de datos está corrupta.", "BD Corrupta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            this.FormParent.LanzarAvisos(101);
+                        }
+                    }   
                     FormParent.UsarioToolStripMenuItem.Enabled = true;
                     FormParent.LogInToolStripMenu.Enabled = false;
                     FormParent.salirDelSistemaToolStripMenuItem1.Enabled = true;
                     this.Close();
-                }
+                    
+                    
+                } 
                 else
                 {
                     MessageBox.Show("Usuario o Contraseña incorrectos.");

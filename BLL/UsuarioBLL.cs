@@ -127,11 +127,19 @@ namespace BLL
 
         public void CerrarSesion()
         {
+            try
+            {
+                GestorBitacora.ObtenerInstancia.Grabar("Sesion Cerrada", "El usuario ha cerrado sesión");
+                Sesion.ObtenerInstancia.CerrarSesion();
+                GC.Collect();
 
-            GestorBitacora.ObtenerInstancia.Grabar("Sesion Cerrada", "El usuario ha cerrado sesión");
-            Sesion.ObtenerInstancia.CerrarSesion();
-                       
-            GC.Collect();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
 
         }
 

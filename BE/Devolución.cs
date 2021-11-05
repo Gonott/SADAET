@@ -9,8 +9,6 @@ namespace BE
     public class Devolución
     {
 
-
-
         public List<Elemento> elementos = new List<Elemento>();
 
 
@@ -19,6 +17,11 @@ namespace BE
         public string Motivo { get; set; }
 
         public DateTime Fecha { get; set; }
+
+
+        public int NroOrden;
+
+        public int solicitudAsociada;
 
     }
 }

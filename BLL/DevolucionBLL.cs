@@ -16,6 +16,8 @@ namespace BLL
 
         EquipoBLL equipobll = new EquipoBLL();
         PerifericoBLL perifbll = new PerifericoBLL();
+        SolicitudBLL solicitudbll = new SolicitudBLL();
+
 
         public void AsignarFecha(Devolución dev, DateTime fecha)
         {
@@ -59,9 +61,28 @@ namespace BLL
             sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
             dev.elementos.Add(sol.equipo);
             dev.Motivo = mot;
+            dev.NroOrden = int.Parse(DateTime.Now.ToString("yyMMddHHmm"));
             mapper.AltaDevolucion(dev,sol);
 
             return dev;
+
+        }
+
+        
+        public Solicitud ObtenerSolicitudAsociada(Devolución dev)
+        {
+            Solicitud sol = new Solicitud();
+            foreach (Solicitud solicitud in solicitudbll.ListarSolicitudes())
+            {
+                if (dev.solicitudAsociada == solicitud.CodPedido)
+                {
+                    sol = solicitud;
+                    sol.Perifericos = perifbll.ListarPerifericosSolicitud(sol);
+                    sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
+                }
+            }
+            return sol;
+
 
         }
 
