@@ -14,9 +14,11 @@ namespace GUI
 {
     public partial class Form_Devoluciones : Form
     {
+        public FormPrincipal FormParent;
         DevolucionBLL devolucionBll = new DevolucionBLL();
         Devolución devolucionTemp;
         List<Devolución> listado = new List<Devolución>();
+        AvisoBLL avisoBll = new AvisoBLL();
 
         public Form_Devoluciones()
         {
@@ -26,6 +28,16 @@ namespace GUI
         private void Form_Devoluciones_Load(object sender, EventArgs e)
         {
             ActualizarGrilla();
+            CompararFechas();
+            if (avisoBll.VerMisAvisos(106).Count >= 1)
+            {
+                DialogResult resultado = MessageBox.Show("¿Deseas ver los anuncios ahora?","Avisos Pendientes", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.Yes)
+                {
+                    this.FormParent.LanzarAvisos(106);
+                }
+                    
+            }
         }
 
 
@@ -83,5 +95,26 @@ namespace GUI
                 throw;
             }
         }
+
+
+        private void CompararFechas()
+        {
+
+            foreach (Devolución devo in listado)
+            {
+                int comparacion = DateTime.Compare(devo.Fecha, DateTime.Now); 
+                if (comparacion < 0)
+                {
+                    avisoBll.CrearAviso(106, "Devolución vencida", "Se debió ir a buscar la devolución de la orden: "
+                        + devo.NroOrden + " el día " + devo.Fecha.ToString("dd/MM/yyyy"));
+                }
+
+
+            }
+
+
+
+        }
+
     }
 }

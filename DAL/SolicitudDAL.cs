@@ -69,6 +69,9 @@ namespace DAL
                         case "Devolucion":
                             solicitud.estado = Estado.Devolucion;
                             break;
+                        case "Retirado":
+                            solicitud.estado = Estado.Retirado;
+                            break;
                     }
 
                     solicitudes.Add(solicitud);

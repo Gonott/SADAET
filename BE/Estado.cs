@@ -27,9 +27,9 @@ namespace BE
 
         Entregado,//4
 
-        Devolucion //5
+        Devolucion, //5
 
-
+        Retirado //6
 
     }
 }

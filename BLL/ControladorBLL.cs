@@ -12,6 +12,7 @@ namespace BLL
 {
    public class ControladorBLL
     {
+        AvisoBLL avisobll = new AvisoBLL();
         private Devolución devActual = new Devolución();
         private Solicitud solicitudEntregados = new Solicitud();
         private List<Elemento> entregados = new List<Elemento>();

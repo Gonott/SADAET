@@ -271,9 +271,10 @@ namespace GUI
 
         private void ingresoEgresoDeComponentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Devoluciones formDevos = new Form_Devoluciones();
-            formDevos.MdiParent = this;
-            formDevos.Show();
+            Form_Retiros formRetiros = new Form_Retiros();
+            formRetiros.MdiParent = this;
+            formRetiros.Show();
+
         }
 
         private void pedirRetiroDeEquipoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -300,6 +301,17 @@ namespace GUI
 
         }
 
+        private void fecharToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Devoluciones formDevos = new Form_Devoluciones();
+            formDevos.MdiParent = this;
+            formDevos.FormParent = this;
+            formDevos.Show();
+        }
 
+        private void verAvisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LanzarAvisos(105);
+        }
     }
 }

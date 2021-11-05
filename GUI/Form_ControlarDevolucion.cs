@@ -20,7 +20,7 @@ namespace GUI
         Devolución estaDevolucion;
         List<Devolución> devoluciones = new List<Devolución>();
         Solicitud solicitudAsociada = new Solicitud();
-
+        AvisoBLL avisobll = new AvisoBLL();
 
 
         public Form_ControlarDevolucion()
@@ -97,6 +97,8 @@ namespace GUI
             else
             {
                 MessageBox.Show("Elementos incompletos, faltan " + controlador.Faltantes.Count + " elementos.");
+                avisobll.CrearAviso(106, "Elementos Incompletos en devolución", "Se necesita ir a buscar los elementos faltantes de la orden nro: " + estaDevolucion.NroOrden);
+
             }
 
             if (controlador.ControlarCondiciones() == true)
@@ -105,7 +107,9 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show(" Hay " + controlador.Dañados.Count + " elementos dañados");
+                MessageBox.Show(" Hay " + controlador.Dañados.Count + " elementos dañados, se está dando aviso a Contaduría para reclamar el seguro.");
+                avisobll.CrearAviso(105, "Elementos dañados en devolución", "Se necesita reclamar la garantía en los elementos dañados de la orden nro: " + estaDevolucion.NroOrden);
+
             }
         }
     }
