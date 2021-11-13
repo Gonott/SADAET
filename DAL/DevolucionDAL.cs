@@ -102,6 +102,7 @@ namespace DAL
                     dev.Codigo = int.Parse(Lector["Codigo"].ToString());
                     dev.Motivo = Lector["Motivo"].ToString();
                     dev.solicitudAsociada = int.Parse(Lector["CodSolicitud"].ToString());
+                    dev.NroOrden = int.Parse(Lector["OrdenNro"].ToString());
                     if (Lector["FechaDevolucion"].ToString() != "" )
                     {
                         dev.Fecha = DateTime.Parse(Lector["FechaDevolucion"].ToString());

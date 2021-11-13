@@ -37,10 +37,10 @@ namespace GUI
         {
             try
             {   estaDevolucion = new Devolución();
-                estaDevolucion.Codigo = int.Parse(textBox1.Text);
+                estaDevolucion.NroOrden = int.Parse(textBox1.Text);
                 foreach (Devolución dev in devoluciones)
                 {
-                    if (estaDevolucion.Codigo == dev.Codigo)
+                    if (estaDevolucion.NroOrden == dev.NroOrden)
                     {
                         estaDevolucion = dev;
                     }
@@ -62,29 +62,54 @@ namespace GUI
         {
             textBox2.Text = 
                 sol.CodPedido + Environment.NewLine 
-                + sol.empleado.Nombre + Environment.NewLine 
-                + sol.empleado.Dirección + Environment.NewLine
-                + sol.Fecha.ToString() + Environment.NewLine +
-                sol.estado.ToString();
+                + "A Nombre de: " + sol.empleado.Nombre + Environment.NewLine 
+                + "Dirección: " + sol.empleado.Dirección + Environment.NewLine
+                + "Fecha de Solicitud: " + sol.Fecha.ToString() + Environment.NewLine 
+                + "Estado Actual: " + sol.estado.ToString();
         }
 
     
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            Elemento elemento = new Elemento();
-            elemento.CodInventario = int.Parse(textBox4.Text);
-            switch (comboBox1.SelectedItem)
+            try
             {
-                case ("Buen Estado"):
-                    elemento.condicion = Condición.BuenEstado;
-                    break;
-                case ("Dañado"):
-                    elemento.condicion = Condición.Dañado;
-                    break;
+                Elemento elemento = new Elemento();
+                elemento.CodInventario = int.Parse(textBox4.Text);
+                switch (comboBox1.SelectedItem)
+                {
+                    case ("Buen Estado"):
+                        elemento.condicion = Condición.BuenEstado;
+                        break;
+                    case ("Dañado"):
+                        elemento.condicion = Condición.Dañado;
+                        break;
+                }
+                foreach (Elemento item in solicitudAsociada.Perifericos)
+                {
+                    if (elemento.CodInventario == item.CodInventario)
+                    {
+                        elemento.Descripcion = item.Descripcion;
+                        estaDevolucion.elementos.Add(elemento);
+                        textBox3.Text += elemento.CodInventario.ToString() + " " + elemento.condicion.ToString() + "  " + elemento.Descripcion +  Environment.NewLine ;
+                    }
+                }
+
+                if (elemento.CodInventario == solicitudAsociada.equipo.CodInventario)
+                {
+                    elemento.Descripcion = solicitudAsociada.equipo.Descripcion;
+                    estaDevolucion.elementos.Add(elemento);
+                    textBox3.Text += elemento.CodInventario.ToString() + " " + elemento.condicion.ToString() + "  " + elemento.Descripcion + Environment.NewLine;
+                }
+                
             }
-            estaDevolucion.elementos.Add(elemento);
-            textBox3.Text += elemento.CodInventario.ToString() + " " + elemento.condicion.ToString() + Environment.NewLine ;
+            catch (Exception ex )
+            {
+                MessageBox.Show("Debe ingresar un codigo válido" + Environment.NewLine + ex.Message);
+                
+            }
+
+            
         }
 
         private void btnControlar_Click(object sender, EventArgs e)
@@ -103,7 +128,7 @@ namespace GUI
 
             if (controlador.ControlarCondiciones() == true)
             {
-                MessageBox.Show("Todos los elementos han sido recibidos como se entregaron");
+                MessageBox.Show("Los elementos han sido recibidos como se entregaron");
             }
             else
             {
