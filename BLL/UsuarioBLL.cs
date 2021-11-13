@@ -200,6 +200,7 @@ namespace BLL
                     if (autorizacion.Id == idRol)
                     {
                         retorno = true;
+                        break;
                     }
                     else
                     {
