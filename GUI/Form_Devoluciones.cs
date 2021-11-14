@@ -9,16 +9,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using BLL;
+using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
+using SERVICIOS.ObserverIdioma;
 
 namespace GUI
 {
-    public partial class Form_Devoluciones : Form
+    public partial class Form_Devoluciones : Form, IIdiomaObserver
     {
         public FormPrincipal FormParent;
         DevolucionBLL devolucionBll = new DevolucionBLL();
         Devolución devolucionTemp;
         List<Devolución> listado = new List<Devolución>();
         AvisoBLL avisoBll = new AvisoBLL();
+        GestorIdiomasBLL gestorDeIdiomas = new GestorIdiomasBLL();
+
+
+        public void Update(Idioma idioma)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control.Tag != null)
+                {
+                    if (int.Parse(control.Tag.ToString()) != 0)
+                    {
+                        control.Text = gestorDeIdiomas.Traducir(Sesion.ObtenerInstancia.EsteIdioma, int.Parse(control.Tag.ToString()));
+                    }
+                }
+            }
+        }
 
         public Form_Devoluciones()
         {

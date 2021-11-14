@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using BLL;
 using BE;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
+using SERVICIOS.ObserverIdioma;
 
 namespace GUI
 {
-    public partial class Form_ABM_Usuarios : Form
+    public partial class Form_ABM_Usuarios : Form, IIdiomaObserver
     {
         GestorIdiomasBLL gestorDeIdiomas = new GestorIdiomasBLL();
         UsuarioBLL usubll = new UsuarioBLL();
@@ -21,6 +23,20 @@ namespace GUI
         Encriptador criptografo = new Encriptador();
 
 
+
+        public void Update(Idioma idioma)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control.Tag != null)
+                {
+                    if (int.Parse(control.Tag.ToString()) != 0)
+                    {
+                        control.Text = gestorDeIdiomas.Traducir(Sesion.ObtenerInstancia.EsteIdioma, int.Parse(control.Tag.ToString()));
+                    }
+                }
+            }
+        }
 
         public Form_ABM_Usuarios()
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SERVICIOS.ObserverIdioma;
 using SERVICIOS;
+using SERVICIOS.ServiciosDAL;
 using BE;
 using BLL;
 
@@ -26,11 +27,22 @@ namespace GUI
             
         }
 
+        GestorIdiomasBLL gestorDeIdiomas = new GestorIdiomasBLL();
+
+
         public void Update(Idioma idioma)
         {
-            throw new NotImplementedException();
+            foreach (Control control in this.Controls)
+            {
+                if (control.Tag != null)
+                {
+                    if (int.Parse(control.Tag.ToString()) != 0)
+                    {
+                        control.Text = gestorDeIdiomas.Traducir(Sesion.ObtenerInstancia.EsteIdioma, int.Parse(control.Tag.ToString()));
+                    }
+                }
+            }
         }
-
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {

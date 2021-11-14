@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using BE;
 using BLL;
 using Microsoft.Reporting.WinForms;
+using SERVICIOS.ObserverIdioma;
+using SERVICIOS.ServiciosDAL;
 
 namespace GUI
 {
-    public partial class Form_SolicitarDevolucion : Form
+    public partial class Form_SolicitarDevolucion : Form, IIdiomaObserver
     {
 
         SolicitudBLL solicitudBLL = new SolicitudBLL();
@@ -126,6 +128,22 @@ namespace GUI
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        GestorIdiomasBLL gestorDeIdiomas = new GestorIdiomasBLL();
+        public void Update(Idioma idioma)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control.Tag != null)
+                {
+                    if (int.Parse(control.Tag.ToString()) != 0)
+                    {
+                        control.Text = gestorDeIdiomas.Traducir(Sesion.ObtenerInstancia.EsteIdioma, int.Parse(control.Tag.ToString()));
+                    }
+                }
+            }
+            
         }
     }
     
