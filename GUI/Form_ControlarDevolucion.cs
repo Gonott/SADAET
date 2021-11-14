@@ -48,6 +48,7 @@ namespace GUI
         private void Form_ControlarDevolucion_Load(object sender, EventArgs e)
         {
             devoluciones = devBLL.VerDevoluciones();
+            Subject.AgregarObserver(this);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -12,6 +12,7 @@ using BLL;
 using Microsoft.Reporting.WinForms;
 using SERVICIOS.ObserverIdioma;
 using SERVICIOS.ServiciosDAL;
+using SERVICIOS;
 
 namespace GUI
 {
@@ -32,7 +33,7 @@ namespace GUI
         private void Form_SolicitarDevolucion_Load(object sender, EventArgs e)
         {
             ActualizarSolicitudes();
-            
+            Subject.AgregarObserver(this);
             textBoxMotivo.Enabled = false;
         }
 

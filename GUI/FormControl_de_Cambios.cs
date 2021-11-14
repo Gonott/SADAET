@@ -35,6 +35,7 @@ namespace GUI
         private void FormControl_de_Cambios_Load(object sender, EventArgs e)
         {
                 ActualizarSolicitudes();
+            Subject.AgregarObserver(this);
         }
 
 

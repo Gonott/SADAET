@@ -46,6 +46,7 @@ namespace GUI
         private void Form_ABM_Usuarios_Load(object sender, EventArgs e)
         {
             LlenarListBoxUsuarios();
+            Subject.AgregarObserver(this);
         }
 
 

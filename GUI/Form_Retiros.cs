@@ -45,6 +45,7 @@ namespace GUI
         private void Form_Retiros_Load(object sender, EventArgs e)
         {
             RefrescarSolicitudes();
+            Subject.AgregarObserver(this);
         }
 
 

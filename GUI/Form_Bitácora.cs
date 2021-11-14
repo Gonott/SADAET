@@ -55,6 +55,7 @@ namespace GUI
             comboBox1.DataSource = usuarioBLL.ListarUsuarios();
             comboBox1.DisplayMember = "NombreUsuario";
             CargarEventos(eventos);
+            Subject.AgregarObserver(this);
 
         }
 

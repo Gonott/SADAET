@@ -45,6 +45,7 @@ namespace GUI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "12";
             this.label1.Text = "Equipos por Retirar";
             // 
             // dataGridView1
@@ -79,7 +80,7 @@ namespace GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 23);
             this.button1.TabIndex = 6;
-            this.button1.Tag = "0";
+            this.button1.Tag = "43";
             this.button1.Text = "Marcar como Retirado";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

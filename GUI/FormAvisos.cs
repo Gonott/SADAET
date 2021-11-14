@@ -15,7 +15,7 @@ using SERVICIOS.ServiciosDAL;
 
 namespace GUI
 {
-    public partial class FormAvisos : Form
+    public partial class FormAvisos : Form, IIdiomaObserver
     {
         private int rolActual;
         AvisoBLL gestor = new AvisoBLL();
@@ -49,6 +49,7 @@ namespace GUI
         private void FormAvisos_Load(object sender, EventArgs e)
         {
             ActualizarGrilla();
+            Subject.AgregarObserver(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

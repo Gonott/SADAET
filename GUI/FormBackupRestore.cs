@@ -49,7 +49,7 @@ namespace GUI
 
         private void FormBackupRestore_Load(object sender, EventArgs e)
         {
-
+            Subject.AgregarObserver(this);
         }
 
         private void backupBtn_Click(object sender, EventArgs e)

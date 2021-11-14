@@ -17,10 +17,6 @@ namespace SERVICIOS.ObserverIdioma
 
         private Idioma _idioma;
 
-        public void AgregarIdioma(string nombre)
-        {
-
-        }
 
 
         public Idioma IdiomaSelected 

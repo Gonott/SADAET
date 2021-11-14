@@ -46,6 +46,7 @@ namespace GUI
 
         private void Form_Devoluciones_Load(object sender, EventArgs e)
         {
+            Subject.AgregarObserver(this);
             ActualizarGrilla();
             CompararFechas();
             if (avisoBll.VerMisAvisos(106).Count >= 1)
@@ -135,5 +136,9 @@ namespace GUI
 
         }
 
+        private void dataGridViewDevoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

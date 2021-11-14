@@ -46,7 +46,7 @@ namespace GUI
 
         private void FormDigitosVerificadores_Load(object sender, EventArgs e)
         {
-
+            Subject.AgregarObserver(this);
         }
 
         private void button1_Click(object sender, EventArgs e)

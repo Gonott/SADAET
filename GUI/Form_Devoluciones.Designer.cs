@@ -43,6 +43,7 @@ namespace GUI
             this.dataGridViewDevoluciones.Size = new System.Drawing.Size(472, 168);
             this.dataGridViewDevoluciones.TabIndex = 0;
             this.dataGridViewDevoluciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDevoluciones_CellClick);
+            this.dataGridViewDevoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDevoluciones_CellContentClick);
             // 
             // dateTimePicker1
             // 
@@ -71,7 +72,7 @@ namespace GUI
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dataGridViewDevoluciones);
             this.Name = "Form_Devoluciones";
-            this.Text = "Form_Devoluciones";
+            this.Text = "Fechar Devoluciones";
             this.Load += new System.EventHandler(this.Form_Devoluciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevoluciones)).EndInit();
             this.ResumeLayout(false);
