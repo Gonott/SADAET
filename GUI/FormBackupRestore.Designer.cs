@@ -42,6 +42,7 @@ namespace GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 23);
             this.button1.TabIndex = 0;
+            this.button1.Tag = "30";
             this.button1.Text = "Explorar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -60,7 +61,8 @@ namespace GUI
             this.backupBtn.Name = "backupBtn";
             this.backupBtn.Size = new System.Drawing.Size(233, 23);
             this.backupBtn.TabIndex = 2;
-            this.backupBtn.Text = "Hacer Backup";
+            this.backupBtn.Tag = "0";
+            this.backupBtn.Text = "Backup";
             this.backupBtn.UseVisualStyleBackColor = true;
             this.backupBtn.Click += new System.EventHandler(this.backupBtn_Click);
             // 
@@ -70,7 +72,8 @@ namespace GUI
             this.restoreBtn.Name = "restoreBtn";
             this.restoreBtn.Size = new System.Drawing.Size(233, 23);
             this.restoreBtn.TabIndex = 3;
-            this.restoreBtn.Text = "Hacer Restauración ";
+            this.restoreBtn.Tag = "0";
+            this.restoreBtn.Text = "Restore";
             this.restoreBtn.UseVisualStyleBackColor = true;
             this.restoreBtn.Click += new System.EventHandler(this.button2_Click);
             // 

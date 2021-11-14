@@ -48,7 +48,7 @@ namespace GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(268, 23);
             this.button1.TabIndex = 1;
-            this.button1.Tag = "0";
+            this.button1.Tag = "63";
             this.button1.Text = "Limpiar avisos";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -61,7 +61,7 @@ namespace GUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormAvisos";
-            this.Text = "FormAvisos";
+            this.Text = "Mis Avisos";
             this.Load += new System.EventHandler(this.FormAvisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

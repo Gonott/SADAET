@@ -40,7 +40,8 @@ namespace GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(322, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Generar DV";
+            this.button1.Tag = "39";
+            this.button1.Text = "Generar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -71,7 +72,7 @@ namespace GUI
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormDigitosVerificadores";
-            this.Text = "FormDigitosVerificadores";
+            this.Text = "Digitos Verificadores";
             this.Load += new System.EventHandler(this.FormDigitosVerificadores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

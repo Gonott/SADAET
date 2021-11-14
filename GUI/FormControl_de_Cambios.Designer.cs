@@ -74,6 +74,7 @@ namespace GUI
             this.LabelHistorico.Name = "LabelHistorico";
             this.LabelHistorico.Size = new System.Drawing.Size(104, 13);
             this.LabelHistorico.TabIndex = 5;
+            this.LabelHistorico.Tag = "64";
             this.LabelHistorico.Text = "Historico de Estados";
             // 
             // button1
@@ -82,7 +83,8 @@ namespace GUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(254, 51);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Volver Estado";
+            this.button1.Tag = "31";
+            this.button1.Text = "Asignar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

@@ -57,6 +57,11 @@ namespace GUI
                 usuarioTemporal.NombreUsuario = textBoxNombre.Text;
                 usuarioTemporal.Contraseña = criptografo.GetSHA256(textBoxPwd.Text);
                 usubll.Alta(usuarioTemporal);
+                textBoxNombre.Text = "";
+                textBoxPwd.Text = "";
+                LlenarListBoxUsuarios();
+
+                MessageBox.Show("Usuario Agregado");
             }
             catch (Exception ex)
             {
@@ -71,6 +76,11 @@ namespace GUI
             try
             {
                 usubll.Baja(usuarioTemporal);
+                textBoxNombre.Text = "";
+                textBoxPwd.Text = "";
+                LlenarListBoxUsuarios();
+
+                MessageBox.Show("Usuario eliminado");
             }
             catch (Exception ex)
             {
@@ -87,6 +97,10 @@ namespace GUI
                 usuarioTemporal.NombreUsuario = textBoxNombre.Text;
                 usuarioTemporal.Contraseña = criptografo.GetSHA256(textBoxPwd.Text);
                 usubll.Modificar(usuarioTemporal);
+                textBoxNombre.Text = "";
+                textBoxPwd.Text = "";
+                LlenarListBoxUsuarios();
+                MessageBox.Show("Listo, se ha modificado el usuario");
             }
             catch (Exception ex)
             {

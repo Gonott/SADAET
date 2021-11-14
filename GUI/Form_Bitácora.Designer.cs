@@ -69,6 +69,7 @@ namespace GUI
             this.checkBoxUsuario.Name = "checkBoxUsuario";
             this.checkBoxUsuario.Size = new System.Drawing.Size(62, 17);
             this.checkBoxUsuario.TabIndex = 5;
+            this.checkBoxUsuario.Tag = "44";
             this.checkBoxUsuario.Text = "Usuario";
             this.checkBoxUsuario.UseVisualStyleBackColor = true;
             this.checkBoxUsuario.CheckedChanged += new System.EventHandler(this.checkBoxUsuario_CheckedChanged);
@@ -80,6 +81,7 @@ namespace GUI
             this.checkBoxfecha.Name = "checkBoxfecha";
             this.checkBoxfecha.Size = new System.Drawing.Size(56, 17);
             this.checkBoxfecha.TabIndex = 6;
+            this.checkBoxfecha.Tag = "67";
             this.checkBoxfecha.Text = "Fecha";
             this.checkBoxfecha.UseVisualStyleBackColor = true;
             this.checkBoxfecha.CheckedChanged += new System.EventHandler(this.checkBoxfecha_CheckedChanged);
@@ -91,6 +93,7 @@ namespace GUI
             this.checkBoxActividad.Name = "checkBoxActividad";
             this.checkBoxActividad.Size = new System.Drawing.Size(92, 17);
             this.checkBoxActividad.TabIndex = 7;
+            this.checkBoxActividad.Tag = "57";
             this.checkBoxActividad.Text = "Palabra Clave";
             this.checkBoxActividad.UseVisualStyleBackColor = true;
             this.checkBoxActividad.CheckedChanged += new System.EventHandler(this.checkBoxActividad_CheckedChanged);
@@ -119,6 +122,7 @@ namespace GUI
             this.labelDesde.Name = "labelDesde";
             this.labelDesde.Size = new System.Drawing.Size(38, 13);
             this.labelDesde.TabIndex = 10;
+            this.labelDesde.Tag = "68";
             this.labelDesde.Text = "Desde";
             // 
             // labelHasta
@@ -128,6 +132,7 @@ namespace GUI
             this.labelHasta.Name = "labelHasta";
             this.labelHasta.Size = new System.Drawing.Size(35, 13);
             this.labelHasta.TabIndex = 11;
+            this.labelHasta.Tag = "69";
             this.labelHasta.Text = "Hasta";
             // 
             // textBox2

@@ -30,7 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.EquipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewSolicitudes = new System.Windows.Forms.DataGridView();
             this.btnSolicitar = new System.Windows.Forms.Button();
@@ -73,6 +73,7 @@ namespace GUI
             this.lblMotivo.Name = "lblMotivo";
             this.lblMotivo.Size = new System.Drawing.Size(123, 13);
             this.lblMotivo.TabIndex = 5;
+            this.lblMotivo.Tag = "62";
             this.lblMotivo.Text = "Motivo de la devolución:";
             // 
             // textBoxMotivo
@@ -84,9 +85,9 @@ namespace GUI
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DSElementos";
-            reportDataSource1.Value = this.EquipoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DSElementos";
+            reportDataSource2.Value = this.EquipoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "GUI.OrdenDeRetiro.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 263);
             this.reportViewer1.Name = "reportViewer1";
@@ -106,7 +107,7 @@ namespace GUI
             this.Controls.Add(this.btnSolicitar);
             this.Controls.Add(this.dataGridViewSolicitudes);
             this.Name = "Form_SolicitarDevolucion";
-            this.Text = "Form_SolicitarDevolucion";
+            this.Text = "Solicitar Devolución de Equipo";
             this.Load += new System.EventHandler(this.Form_SolicitarDevolucion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EquipoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSolicitudes)).EndInit();

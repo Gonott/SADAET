@@ -113,6 +113,7 @@ namespace GUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 25;
+            this.label2.Tag = "52";
             this.label2.Text = "Contraseña:";
             // 
             // Form_ABM_Usuarios
