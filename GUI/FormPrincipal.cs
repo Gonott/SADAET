@@ -76,9 +76,18 @@ namespace GUI
 
         private void salirDelSistemaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
+
+            SalirDelSistema();
+
+        }
+
+
+        public void SalirDelSistema()
+        {
             try
-            { 
-                foreach (ToolStripItem item in this.menuStrip1.Items  )
+            {
+                foreach (ToolStripItem item in this.menuStrip1.Items)
                 {
                     item.Enabled = false;
                 }
@@ -86,7 +95,7 @@ namespace GUI
                 {
                     form.Close();
                 }
-                
+
                 this.UsarioToolStripMenuItem.Enabled = true;
                 this.LogInToolStripMenu.Enabled = true;
                 usuarioBLL.CerrarSesion();
@@ -95,11 +104,8 @@ namespace GUI
             catch (Exception)
             {
                 MessageBox.Show("Ya has cerrado sesion");
-                
+
             }
-           
-
-
         }
 
         private void entregasYToolStripMenuItem_Click(object sender, EventArgs e)
@@ -251,6 +257,7 @@ namespace GUI
         private void backupYRestoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBackupRestore formBackup = new FormBackupRestore();
+            formBackup.formpadre = this;
             formBackup.MdiParent = this;
             formBackup.Show();
         }

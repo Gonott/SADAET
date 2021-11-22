@@ -18,6 +18,7 @@ namespace GUI
     public partial class FormBackupRestore : Form, IIdiomaObserver
     {
 
+        public FormPrincipal formpadre;
         string fileName = null;
         BackupRestore gestorBackupRestore = new BackupRestore();
 
@@ -78,7 +79,9 @@ namespace GUI
                     try
                     {
                         gestorBackupRestore.Restore(openFileDialog1.FileName);
-                        MessageBox.Show("**Restore exitoso**");
+                        MessageBox.Show("Restore Exitoso, es necesario volver a iniciar sesión.");
+                        formpadre.SalirDelSistema();
+
 
                     }
                     catch (Exception ex)
