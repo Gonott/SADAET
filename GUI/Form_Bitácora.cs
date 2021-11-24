@@ -178,5 +178,17 @@ namespace GUI
                 textBox2.Enabled = false;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportesPDF reportesPDF = new ReportesPDF();
+            List<Object> objetosPDF = new List<Object>();
+            foreach (var item in eventosFiltrados)
+            {
+                objetosPDF.Add(item);
+            }
+            
+            reportesPDF.CrearReportePDF(objetosPDF) ;
+        }
     }
 }
