@@ -53,7 +53,9 @@ namespace GUI
 
         private void LlenarListBoxUsuarios()
         {
-            ListBoxUsuarios.Items.Clear();
+ 
+            
+            ListBoxUsuarios.DataSource = null;
             ListBoxUsuarios.DataSource = usubll.ListarUsuarios();
             ListBoxUsuarios.DisplayMember = "NombreUsuario";
 
@@ -62,9 +64,13 @@ namespace GUI
 
         private void ListBoxUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            usuarioTemporal = (Usuario)ListBoxUsuarios.SelectedItem;
-            textBoxNombre.Text = usuarioTemporal.NombreUsuario;
-            textBoxPwd.Text = usuarioTemporal.Contraseña;
+            if (ListBoxUsuarios.SelectedIndex >= 0)
+            {
+                usuarioTemporal = (Usuario)ListBoxUsuarios.SelectedItem;
+                textBoxNombre.Text = usuarioTemporal.NombreUsuario;
+                textBoxPwd.Text = usuarioTemporal.Contraseña;
+            }
+            
         }
 
         private void AltaBtn_Click(object sender, EventArgs e)
@@ -124,6 +130,11 @@ namespace GUI
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ListBoxUsuarios_SelectedValueChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

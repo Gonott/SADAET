@@ -48,6 +48,7 @@ namespace GUI
             this.ListBoxUsuarios.TabIndex = 2;
             this.ListBoxUsuarios.Tag = "0";
             this.ListBoxUsuarios.SelectedIndexChanged += new System.EventHandler(this.ListBoxUsuarios_SelectedIndexChanged);
+            this.ListBoxUsuarios.SelectedValueChanged += new System.EventHandler(this.ListBoxUsuarios_SelectedValueChanged);
             // 
             // ModificarBtn
             // 
@@ -93,6 +94,7 @@ namespace GUI
             // 
             this.textBoxPwd.Location = new System.Drawing.Point(248, 49);
             this.textBoxPwd.Name = "textBoxPwd";
+            this.textBoxPwd.PasswordChar = '*';
             this.textBoxPwd.Size = new System.Drawing.Size(176, 20);
             this.textBoxPwd.TabIndex = 23;
             // 

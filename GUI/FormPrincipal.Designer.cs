@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.UsarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LogInToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +63,8 @@
             this.controlarDevoluciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contaduríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verAvisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaEnLineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,10 +80,12 @@
             this.idiomasToolStripMenuItem,
             this.auditoríaToolStripMenuItem,
             this.depositoToolStripMenuItem,
-            this.contaduríaToolStripMenuItem});
+            this.contaduríaToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.ayudaEnLineaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(937, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1014, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Tag = "0";
             this.menuStrip1.Text = "menuStrip1";
@@ -403,17 +408,30 @@
             // 
             this.verAvisosToolStripMenuItem.Enabled = false;
             this.verAvisosToolStripMenuItem.Name = "verAvisosToolStripMenuItem";
-            this.verAvisosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verAvisosToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.verAvisosToolStripMenuItem.Tag = "56";
             this.verAvisosToolStripMenuItem.Text = "Ver Avisos";
             this.verAvisosToolStripMenuItem.Click += new System.EventHandler(this.verAvisosToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
+            // ayudaEnLineaToolStripMenuItem
+            // 
+            this.ayudaEnLineaToolStripMenuItem.Name = "ayudaEnLineaToolStripMenuItem";
+            this.ayudaEnLineaToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.ayudaEnLineaToolStripMenuItem.Text = "Ayuda en Linea";
+            this.ayudaEnLineaToolStripMenuItem.Click += new System.EventHandler(this.ayudaEnLineaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 450);
+            this.ClientSize = new System.Drawing.Size(1014, 455);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
@@ -462,6 +480,8 @@
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contaduríaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verAvisosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ayudaEnLineaToolStripMenuItem;
     }
 }
 
