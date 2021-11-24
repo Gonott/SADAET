@@ -82,6 +82,8 @@ namespace GUI
                     FormParent.UsarioToolStripMenuItem.Enabled = true;
                     FormParent.LogInToolStripMenu.Enabled = false;
                     FormParent.salirDelSistemaToolStripMenuItem1.Enabled = true;
+                    FormParent.ayudaEnLineaToolStripMenuItem.Enabled = true;
+                    //FormParent.ayuda.Enabled = true;
                     this.Close();
                     
                     

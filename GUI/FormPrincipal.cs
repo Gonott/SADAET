@@ -322,9 +322,11 @@ namespace GUI
             LanzarAvisos(105);
         }
 
-        private void ayudaEnLineaToolStripMenuItem_Click(object sender, EventArgs e)
+       
+
+        private void ayudaEnLineaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.google.com");
+            System.Diagnostics.Process.Start("https://sadaet-ayuda.netlify.app/");
         }
     }
 }
