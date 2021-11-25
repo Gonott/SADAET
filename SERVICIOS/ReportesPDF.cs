@@ -29,8 +29,9 @@ namespace SERVICIOS
             String s = DateTime.Now.ToString();
             s = s.Replace("/", "-").Replace(":", ".");
             s = "Reporte Sadaet" + s;
-            String ruta = "C:\\BackupRestoreSADAET\\" + s + ".pdf";
-
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)  + "\\";
+            String ruta = path + s + ".pdf";
+            
             // Must have write permissions to the path folder
             PdfWriter writer = new PdfWriter(ruta);
             PdfDocument pdf = new PdfDocument(writer);
@@ -97,12 +98,12 @@ namespace SERVICIOS
 
 
             // Hyper link
-            Link link = new Link("click here",
-               PdfAction.CreateURI("https://www.google.com"));
-            Paragraph hyperLink = new Paragraph("Please ")
+            Link link = new Link("presione aquí",
+               PdfAction.CreateURI("https://sadaet-ayuda.netlify.app"));
+            Paragraph hyperLink = new Paragraph("Por favor ")
                .Add(link.SetBold().SetUnderline()
                .SetItalic().SetFontColor(ColorConstants.BLUE))
-               .Add(" to go www.google.com.");
+               .Add(" para ir a la ayuda en linea de SADAET.");
 
             document.Add(newline);
             document.Add(hyperLink);
