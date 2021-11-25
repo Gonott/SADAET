@@ -22,37 +22,29 @@ namespace SERVICIOS
     public class Serializador
     {
 
-
         public void Serializar(Exception ex)
         {
             ExepcionSerializada excep = new ExepcionSerializada(ex);
 
-
+          
             //esto para tirarlo a un path Filestream
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ExcepcionNoControlada.xml" ;
             System.IO.FileStream file = System.IO.File.Create(path);
 
             //esto para memorystream
-            System.IO.MemoryStream stream = new System.IO.MemoryStream();
+            //System.IO.MemoryStream stream = new System.IO.MemoryStream();
             //luego hay que mandarlo por mail de alguna manera
 
-            //crear el serializador
+            //crear el Serializer
             XmlSerializer x = new XmlSerializer(excep.GetType());
-
-
-
             
-            using (XmlWriter writer = XmlWriter.Create("ExcepcionSerializada.xml"))
-            {
-                x.Serialize(writer, excep);
-            }
-           
-            
-            //XmlTextWriter xmltextWriter = new XmlTextWriter(stream, System.Text.Encoding.UTF8);
-            //x.Serialize(xmltextWriter, excep);
-            //xmltextWriter.Close();
-           
-            //Process.Start("Outlook.exe /a " + path);
+
+            XmlTextWriter xmltextWriter = new XmlTextWriter(file, System.Text.Encoding.UTF8);
+            x.Serialize(xmltextWriter, excep);
+            xmltextWriter.Close();
+
+
+            Process.Start("Outlook.exe","/a \"" + path + "\"");
         }
 
 
