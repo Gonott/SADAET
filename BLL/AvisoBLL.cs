@@ -27,9 +27,9 @@ namespace BLL
                 }
                 return misAvisos;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
         
@@ -47,9 +47,9 @@ namespace BLL
                 unAviso.Mensaje = mensaje;
                 mapper.AltaAviso(unAviso);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
         }
@@ -61,9 +61,9 @@ namespace BLL
             {
                 mapper.EliminarPorRol(rol);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
         }

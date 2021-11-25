@@ -73,9 +73,9 @@ namespace BLL
                 empleados = mapper.ListarEmpleados();
                 return empleados;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
                 throw;
             }
         }

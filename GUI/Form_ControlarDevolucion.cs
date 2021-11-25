@@ -71,7 +71,8 @@ namespace GUI
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Debe ingresar un codigo");
+                
             }
         }
 

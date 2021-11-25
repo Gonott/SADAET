@@ -52,36 +52,55 @@ namespace BLL
 
         public Devolución CrearDevolución(string mot, Solicitud sol)
         {
-            sol.Perifericos = perifbll.ListarPerifericosSolicitud(sol);
-            Devolución dev = new Devolución();
-            foreach (Elemento elemento in sol.Perifericos)
+            try
             {
-                dev.elementos.Add(elemento);
-            }
-            sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
-            dev.elementos.Add(sol.equipo);
-            dev.Motivo = mot;
-            dev.NroOrden = int.Parse(DateTime.Now.ToString("yyMMddHHmm"));
-            mapper.AltaDevolucion(dev,sol);
+                sol.Perifericos = perifbll.ListarPerifericosSolicitud(sol);
+                Devolución dev = new Devolución();
+                foreach (Elemento elemento in sol.Perifericos)
+                {
+                    dev.elementos.Add(elemento);
+                }
+                sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
+                dev.elementos.Add(sol.equipo);
+                dev.Motivo = mot;
+                dev.NroOrden = int.Parse(DateTime.Now.ToString("yyMMddHHmm"));
+                mapper.AltaDevolucion(dev,sol);
 
-            return dev;
+                return dev;
+
+            }
+            catch (Exception ex)
+            {
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw;
+            }
+           
 
         }
 
         
         public Solicitud ObtenerSolicitudAsociada(Devolución dev)
         {
-            Solicitud sol = new Solicitud();
-            foreach (Solicitud solicitud in solicitudbll.ListarSolicitudes())
+            try
             {
-                if (dev.solicitudAsociada == solicitud.CodPedido)
+                Solicitud sol = new Solicitud();
+                foreach (Solicitud solicitud in solicitudbll.ListarSolicitudes())
                 {
-                    sol = solicitud;
-                    sol.Perifericos = perifbll.ListarPerifericosSolicitud(sol);
-                    sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
-                }
+                    if (dev.solicitudAsociada == solicitud.CodPedido)
+                    {
+                        sol = solicitud;
+                        sol.Perifericos = perifbll.ListarPerifericosSolicitud(sol);
+                        sol.equipo = equipobll.SeleccionarEquipo(sol.equipo.CodInventario);
+                    }
             }
             return sol;
+            }
+            catch (Exception ex)
+            {
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw;
+            }
+            
 
 
         }

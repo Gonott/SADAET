@@ -37,57 +37,65 @@ namespace BLL
         {
             
             bool resultado = false;
-
-            if (devActual.elementos.Count() == entregados.Count())
+            try
             {
-                foreach (Elemento elemEntregado in entregados)
+                if (devActual.elementos.Count() == entregados.Count())
                 {
-                    foreach (Elemento elemRecibido in devActual.elementos)
+                    foreach (Elemento elemEntregado in entregados)
                     {
-                        if (elemRecibido.CodInventario == elemEntregado.CodInventario)
+                        foreach (Elemento elemRecibido in devActual.elementos)
                         {
-                            resultado = true;
-                            break;
+                            if (elemRecibido.CodInventario == elemEntregado.CodInventario)
+                            {
+                                resultado = true;
+                                break;
+
+                            }
+                            if (elemRecibido.CodInventario != elemEntregado.CodInventario)
+                            {
+                                resultado = false;
+                            }
 
                         }
-                        if (elemRecibido.CodInventario != elemEntregado.CodInventario)
+                        if (resultado == false)
                         {
-                            resultado = false; 
+                            Faltantes.Add(elemEntregado);
                         }
 
-                    }
-                    if (resultado == false)
-                    {
-                        Faltantes.Add(elemEntregado);
-                    }
-
-                }
-            }
-            else if (devActual.elementos.Count() < entregados.Count())
-            {
-                
-                foreach (Elemento entregado in entregados)
-                {
-                    bool está = false;
-                    foreach (Elemento recibido in devActual.elementos)
-                    {
-                        if (entregado.CodInventario != recibido.CodInventario)
-                        {
-                            
-                            resultado = false;
-                        }
-                        if(entregado.CodInventario == recibido.CodInventario)
-                        {
-                            está = true;
-                            break;
-                        }
-                    }
-                    if(está == false)
-                    {
-                        Faltantes.Add(entregado);
                     }
                 }
+                else if (devActual.elementos.Count() < entregados.Count())
+                {
+
+                    foreach (Elemento entregado in entregados)
+                    {
+                        bool está = false;
+                        foreach (Elemento recibido in devActual.elementos)
+                        {
+                            if (entregado.CodInventario != recibido.CodInventario)
+                            {
+
+                                resultado = false;
+                            }
+                            if (entregado.CodInventario == recibido.CodInventario)
+                            {
+                                está = true;
+                                break;
+                            }
+                        }
+                        if (está == false)
+                        {
+                            Faltantes.Add(entregado);
+                        }
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                GestorBitacora.ObtenerInstancia.Grabar("Excepción", "El sistema lanzó la excepción: " + ex.Message);
+                throw;
+            }
+            
 
             return resultado;
         }
