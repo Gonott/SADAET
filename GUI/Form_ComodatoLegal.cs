@@ -32,7 +32,7 @@ namespace GUI
         private void Form_ComodatoLegal_Load(object sender, EventArgs e)
         {
             ActualizarSolicitudes();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
             Subject.AgregarObserver(this);
         }
 

@@ -36,7 +36,7 @@ namespace GUI
         {
             ActualizarSolicitudes();
             Subject.AgregarObserver(this);
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
