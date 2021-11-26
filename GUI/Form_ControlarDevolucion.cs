@@ -54,7 +54,8 @@ namespace GUI
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
-            {   estaDevolucion = new Devolución();
+            {
+                estaDevolucion = new Devolución();
                 estaDevolucion.NroOrden = int.Parse(textBox1.Text);
                 foreach (Devolución dev in devoluciones)
                 {
@@ -66,13 +67,13 @@ namespace GUI
 
                 solicitudAsociada = devBLL.ObtenerSolicitudAsociada(estaDevolucion);
                 VerSolicitud(solicitudAsociada);
-              
+
             }
             catch (Exception)
             {
 
                 MessageBox.Show("Debe ingresar un codigo");
-                
+
             }
         }
 
