@@ -44,8 +44,20 @@ namespace SERVICIOS
             xmltextWriter.Close();
 
 
-            Process.Start("Outlook.exe","/a \"" + path + "\"");
+
+            try
+            {
+                Process.Start("Outlook.exe","/a \"" + path + "\"");
+            }
+            catch (Exception e)
+            {
+                
+                throw e;
+            }
+
+            
         }
+
 
 
 
